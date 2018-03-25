@@ -1,0 +1,13 @@
+#article
+  margin: 0
+  padding: 0
+  display: flex
+  max-width: $matte
+  flex-direction: column
+  background-color: $body-bg
+
+  +breakpoint( max-width nth( $scale, 5 ) )
+    overflow: hidden
+
+  +breakpoint( 1441px )
+    box-shadow: 0 -4px 7px rgba( $black, .2 )

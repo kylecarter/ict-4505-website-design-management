@@ -1,0 +1,29 @@
+.form-checkbox
+  +position( relative, null null null null )
+
+  input[type="checkbox"]
+    +position( absolute, 0 null null 0 )
+    text-indent: 1000em
+    overflow: hidden
+    z-index: -1
+    +size( 0 )
+
+    + label
+      font-weight: 400
+
+      &:before
+        +position( relative, null null null null )
+        transition: all 0.15s ease-in-out
+        border: thin solid $border-color
+        background-color: $white
+        vertical-align: middle
+        display: inline-block
+        border-radius: 5px
+        margin: 0 11px 0 0
+        +size( 26px )
+        content: ''
+        z-index: 1
+
+    &:checked + label:before
+      border-color: $primary
+      border-width: 8px

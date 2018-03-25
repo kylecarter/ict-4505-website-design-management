@@ -227,3 +227,6 @@ $RECYCLE.BIN/
 
 # custom
 NOTES.md
+public/css/
+public/js/
+build/

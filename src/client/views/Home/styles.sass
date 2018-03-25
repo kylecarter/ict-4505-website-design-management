@@ -1,0 +1,81 @@
+.home
+
+  &-view#main
+
+    .wrapper
+      +container
+      display: flex
+      flex-wrap: wrap
+      align-items: stretch
+      background-color: $ternary
+
+
+  &-marquee
+    padding: 16px
+    width: 100%
+
+    h3
+      +container
+      color: $white
+      font-weight: 700
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+      background: $white url( '/assets/img/banner.JPG' ) no-repeat center top
+      background-size: 100% auto
+      padding: 12% 16px
+
+  &-title
+    color: $primary
+
+  &-view .sidebar
+
+    h1
+      font-size: 2em
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+      margin-top: -75px
+      border-top-left-radius: $border-radius-base
+      border-top-right-radius: $border-radius-base
+
+    &-block
+      background-color: $white
+      padding: 16px
+
+  &-view .content
+
+    .list-tags
+
+      > li:before
+        content: ''
+        +size( 1em )
+        margin: 0 5px
+        border-radius: 100%
+        display: inline-block
+        background-color: $sixth
+        border: thin solid $sixth
+
+      > .language
+
+        &-javascript:before
+          border-color: $yellow
+          background-color: $yellow
+
+        &-python:before
+          border-color: $blue
+          background-color: $blue
+
+        &-html:before
+          border-color: $red
+          background-color: $red
+
+        &-css:before
+          border-color: $orange
+          background-color: $orange
+
+        &-sass:before
+          border-color: $pink
+          background-color: $pink
+
+        &-jsx:before
+          border-color: $blueDark
+          background-color: $blueDark
