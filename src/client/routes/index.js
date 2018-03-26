@@ -26,10 +26,11 @@ export default class Routes extends React.Component {
   }
 
   render() {
+
     return (<article role="article" id="article">
       <Switch>
-        <Route path="/" exact render={ ()=> (<Home { ...this.state } />) } />
-        <Route render={ ()=> <FourOhFour { ...this.state } /> } />
+        <Route path="/" exact render={ ()=> (<Home projects={ this.state.projects || [] } />) } />
+        <Route render={ ()=> <FourOhFour projects={ this.state.projects || [] } /> } />
       </Switch>
       <Footer />
     </article>);
