@@ -1,0 +1,2 @@
+django: env PYTHONPATH=$PYTHONPATH:$PWD/backend gunicorn cms.wsgi:application --bind $DJANGO_HOST:$DJANGO_PORT --log-file -
+web: npm start

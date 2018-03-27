@@ -10,8 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+# Python
 import os
 import socket
+
+# Contrib
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -81,17 +85,8 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get( 'DATABASE_NAME' ),
-        'USER': os.environ.get( 'DATABASE_USER' ),
-        'PASSWORD': os.environ.get( 'DATABASE_PSWD' ),
-        'HOST': os.environ.get( 'DATABASE_HOST' ),
-        'PORT': os.environ.get( 'DATABASE_PORT' ),
-    }
-}
-
+DATABASES['default'] = dj_database_url.config( default=os.environ.get( 'DATABASE_URL' ), conn_max_age=600 )
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
