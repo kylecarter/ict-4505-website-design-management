@@ -7,10 +7,9 @@
     "postinstall": "npm run build",
     "django": "./backend/manage.py runserver",
     "watch:src": "babel ./src -d build --watch",
-    "start": "babel-node ./build/server/index.js",
     "server:dev": "nodemon --exec babel-node ./build/server/index.js",
     "watch:webpack": "webpack --config ./webpack.config.babel.js --color --progress --watch",
-    "server": "babel-node --optimize_for_size --max_old_space_size=920 --gc_interval=100 --expose-gc ./build/server/index.js",
+    "start": "babel-node --optimize_for_size --max_old_space_size=920 --gc_interval=100 --expose-gc ./build/server/index.js",
     "watch:sass": "node-sass src/client/sass/stylesheet.sass --watch --recursive --precision=8 --include-path=node_modules/ -o public/css/",
     "start:dev": "source .env && parallelshell 'npm run watch:sass' 'npm run watch:webpack' 'npm run watch:src' 'npm run server:dev' 'npm run django'",
     "build": "export NODE_ENV=production && node-sass src/client/sass/stylesheet.sass -r --precision=8 --include-path=node_modules/ -o public/css/ && postcss public/css/stylesheet.css --verbose --env production --replace && babel ./src -d build && webpack --config ./webpack.config.babel.js"
