@@ -4,6 +4,7 @@
   "description": "Course work for ICT 4505 Website Design and Management, a class I took as part of my masters degree program.",
   "main": "./build/server/index.js",
   "scripts": {
+    "postinstall": "npm run build",
     "django": "./backend/manage.py runserver",
     "watch:src": "babel ./src -d build --watch",
     "start": "babel-node ./build/server/index.js",
