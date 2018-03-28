@@ -1,1 +1,1 @@
-web: env PYTHONPATH=$PYTHONPATH:$PWD/backend gunicorn backend.wsgi:application --bind $DJANGO_HOST:$DJANGO_PORT
+web: env PYTHONPATH=$PYTHONPATH:$PWD/backend gunicorn backend.wsgi:application
