@@ -2,8 +2,10 @@
 
 // Node Modules
 import React from 'react'
+import jQuery from 'jquery'
 import underscore from 'underscore'
 
+const $ = jQuery
 const _ = underscore;
 
 class Tag extends React.Component {

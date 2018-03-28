@@ -34,12 +34,14 @@ export default ( req, res )=> {
   switch( true ) {
     case ( !MATCH ):
       title = "Page Not Found";
-      // api = DJANGO + '/api/v1/projects';
+      api = DJANGO + '/api/v1/projects';
     default:
       title = 'Kyle A. Carter | ICT Website Design and Management (online) | Spring 2018';
-      // api = DJANGO + '/api/v1/projects';
+      api = DJANGO + '/api/v1/projects';
       break;
   }
+
+  GetApi.handler( req, res, DJANGO + '/api/v1/verify' ).then( resp => console.log( resp.data ) ).catch( err => console.log( err ) );
 
   return GetApi.handler( req, res, api ).then( resp => {
     const PROPS = _.extend( {}, resp.data );
