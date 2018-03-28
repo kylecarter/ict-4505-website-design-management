@@ -34,10 +34,10 @@ export default ( req, res )=> {
   switch( true ) {
     case ( !MATCH ):
       title = "Page Not Found";
-      api = DJANGO + '/api/v1/projects';
+      // api = DJANGO + '/api/v1/projects';
     default:
       title = 'Kyle A. Carter | ICT Website Design and Management (online) | Spring 2018';
-      api = DJANGO + '/api/v1/projects';
+      // api = DJANGO + '/api/v1/projects';
       break;
   }
 
