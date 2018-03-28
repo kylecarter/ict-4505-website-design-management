@@ -16,6 +16,8 @@ import router from '../router'
 const APP = express();
 const ASSETS = express.static( path.join( __dirname.replace( /\/build\/server\/*$/, '' ), '/public' ) );
 
+console.log( "APPLICATION configuring..." );
+
 APP.use( cors() );
 APP.use( ASSETS );
 APP.use( cookieParser() );
