@@ -43,7 +43,6 @@ export default class Home extends React.Component {
 
   render() {
     const { projects } = this.state;
-    console.log( projects );
     return (<main role="main" id="main" className="home-view">
       <section className="home-marquee">
         <h3 style={{ padding: '16px' }}>ICT Website Design and Management (online) | Spring 2018</h3>
