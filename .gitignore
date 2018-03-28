@@ -230,3 +230,4 @@ NOTES.md
 public/css/
 public/js/
 build/
+heroku-buildpack-runit/
