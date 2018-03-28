@@ -15,8 +15,7 @@
     "build": "export NODE_ENV=production && node-sass src/client/sass/stylesheet.sass -r --precision=8 --include-path=node_modules/ -o public/css/ && postcss public/css/stylesheet.css --verbose --env production --replace && babel ./src -d build && webpack --config ./webpack.config.babel.js"
   },
   "engines": {
-    "node": "8.10.0",
-    "npm": "^4.0.0"
+    "node": "8.10.0"
   },
   "browserslist": [
     "> 1%",
