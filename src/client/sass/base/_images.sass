@@ -1,0 +1,16 @@
+.img
+
+  &-block
+    display: block
+
+  &-responsive
+    height: auto
+    max-width: 100%
+
+  &-rounded
+    @extend .img-block
+    border-radius: $border-radius-base
+
+  &-circle
+    @extend .img-block
+    border-radius: 100%

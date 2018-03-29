@@ -1,0 +1,57 @@
+$page: 1440
+$sidebar: 0
+$container: 1270
+$matte: $page * 1px
+$content: $container - $sidebar
+$scale: ( 0 479px 599px 767px 991px 1199px )
+$susy: ('columns': susy-repeat(12), 'gutters': 0.25, 'spread': 'narrow', 'container-spread': 'narrow',)
+
+$small-screen: nth( $scale, 4 ) + 1
+$medium-screen: nth( $scale, 5 ) + 1
+$large-screen: nth( $scale, 6 ) + 1
+
+$font-family-serif: "Georgia", "Times", "Times New Roman", serif
+$font-family-sans-serif: 'Open Sans', helvetica, sans-serif
+$font-family-base: $font-family-sans-serif
+$headings-font-family: $font-family-sans-serif
+
+$typography-base: 14
+$font-size-base: $typography-base * 1px
+$em-base: $font-size-base
+$line-height-base: ( $typography-base + 6 ) / $typography-base
+$font-size-xlarge: $font-size-base + 4
+$font-size-large: $font-size-base + 2
+$font-size-small: $font-size-base - 2
+$font-size-xsmall: $font-size-base - 4
+$letter-spacing-base: ( $typography-base / 7 ) * 1px
+
+$font-weight-100: 100
+$font-weight-200: 200
+$font-weight-300: 300
+$font-weight-400: 400
+$font-weight-500: 500
+$font-weight-600: 600
+$font-weight-700: 700
+$font-weight-800: 800
+$font-weight-900: 900
+
+$border-radius-base: ( $typography-base - 10 ) * 1px
+$border-radius-small: $border-radius-base - 1
+$border-radius-large: $border-radius-base + 2
+
+$padding-base-vertical: ( $typography-base - 8 ) * 1px
+$padding-base-horizontal: ( ( $typography-base - 8 ) * 2 ) * 1px
+
+$input-height-base: 42px
+$input-border-radius: $border-radius-base
+
+$btn-font-weight: $font-weight-600
+$btn-border-radius-base: $border-radius-small - 1
+$btn-letter-spacing: $letter-spacing-base
+
+$base-border-radius: $border-radius-base
+$base-line-height: $line-height-base
+$refills-serif: $font-family-serif
+$base-font-size: $font-size-base
+$narrow-sans: $font-family-base
+$refills-nav-height: 60px

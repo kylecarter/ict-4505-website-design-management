@@ -1,0 +1,183 @@
+html, body
+  font: normal normal normal #{$font-size-base}/#{$line-height-base} $font-family-base
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  background-color: $matte-bg
+  box-sizing: border-box
+  font-smooth: always
+  color: $text-color
+  padding: 0
+  margin: 0
+
+  *
+    &, &:after, &:before
+      box-sizing: inherit
+
+h1, h2, h4, h5, h6
+  font-family: $headings-font-family
+  color: $headings-color
+  font-weight: 700
+
+h1
+  font-size: emify( 48px )
+
+  +breakpoint( max-width nth( $scale, 5 ) )
+    font-size: emify( 32px )
+
+h2
+  font-size: emify( 40px )
+
+  +breakpoint( max-width nth( $scale, 5 ) )
+    font-size: emify( 28px )
+
+h3
+  font-size: emify( 26px )
+  font-weight: 300
+
+h4
+  font-size: emify( 18px )
+
+h5
+  margin: 0 0 24px
+  font-size: emify( 16px )
+
+h6
+  font-size: emify( 13px )
+
+p, li, td, tr, input, label, textarea, select, blockquote
+  font-size: 100%
+
+p, li, blockquote
+  margin-bottom: 16px
+
+.text
+
+  &-center
+    text-align: center
+
+  &-left
+    text-align: left
+
+  &-right
+    text-align: right
+
+  &-uppercase
+    text-transform: uppercase
+
+  &-capitalize
+    text-transform: capitalize
+
+  &-lowercase
+    text-transform: lowercase
+
+  &-underline
+    text-decoration: underline
+
+.block
+
+  &-center
+    text-align: center
+    display: block
+    margin: 0 auto
+
+  &-left
+    margin: 0 auto 0 0
+    text-align: left
+    display: block
+
+  &-right
+    margin: 0 0 0 auto
+    text-align: right
+    display: block
+
+.sr-only
+  +position( absolute, 0 null null 0 )
+  text-indent: 1000em
+  overflow: hidden
+  +size( 0 )
+
+.hidden
+
+  .no-js &-nojs, .js &-js
+    display: none !important
+
+  +breakpoint( max-width nth( $scale, 3 ) )
+    &-xs
+      display: none !important
+
+  +breakpoint( (nth( $scale, 4 ) + 1) nth( $scale, 5 ) )
+    &-sm
+      display: none !important
+
+  +breakpoint( (nth( $scale, 5 ) + 1) nth( $scale, 6 ) )
+    &-md
+      display: none !important
+
+  +breakpoint( nth( $scale, 6 ) + 1 )
+    &-lg
+      display: none !important
+
+.visible
+
+  &-inline
+
+    &-xs, &-sm, &-md, &-lg
+      display: none !important
+
+    +breakpoint( max-width nth( $scale, 3 ) )
+      &-xs
+        display: inline !important
+
+    +breakpoint( (nth( $scale, 4 ) + 1) nth( $scale, 5 ) )
+      &-sm
+        display: inline !important
+
+    +breakpoint( (nth( $scale, 5 ) + 1) nth( $scale, 6 ) )
+      &-md
+        display: inline !important
+
+    +breakpoint( nth( $scale, 6 ) + 1 )
+      &-lg
+        display: inline !important
+
+  &-inline-block
+
+    &-xs, &-sm, &-md, &-lg
+      display: none !important
+
+    +breakpoint( max-width nth( $scale, 3 ) )
+      &-xs
+        display: inline-block !important
+
+    +breakpoint( (nth( $scale, 4 ) + 1) nth( $scale, 5 ) )
+      &-sm
+        display: inline-block !important
+
+    +breakpoint( (nth( $scale, 5 ) + 1) nth( $scale, 6 ) )
+      &-md
+        display: inline-block !important
+
+    +breakpoint( nth( $scale, 6 ) + 1 )
+      &-lg
+        display: inline-block !important
+
+  &-block
+
+    &-xs, &-sm, &-md, &-lg
+      display: none !important
+
+    +breakpoint( max-width nth( $scale, 3 ) )
+      &-xs
+        display: block !important
+
+    +breakpoint( (nth( $scale, 4 ) + 1) nth( $scale, 5 ) )
+      &-sm
+        display: block !important
+
+    +breakpoint( (nth( $scale, 5 ) + 1) nth( $scale, 6 ) )
+      &-md
+        display: block !important
+
+    +breakpoint( nth( $scale, 6 ) + 1 )
+      &-lg
+        display: block !important

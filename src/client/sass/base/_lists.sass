@@ -1,0 +1,46 @@
+.list
+
+  &-unstyled
+    list-style-type: none
+    padding: 0
+    margin: 0
+
+    > li
+      list-style-type: none
+      padding: 0
+      margin: 0
+
+  &-inline
+    @extend .list-unstyled
+
+    > li
+      display: inline-block
+      padding: 0 5px
+
+  &-nav
+    @extend .list-unstyled
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+      align-items: center
+      display: table
+      display: flex
+
+    > li
+      padding: 0
+
+      &:first-child
+        padding-left: 0
+
+      &:last-child
+        padding-right: 0
+
+      +breakpoint( nth( $scale, 5 ) + 1 )
+        vertical-align: middle
+        display: table-cell
+        padding: 0 21px
+
+        &:first-child
+          padding-left: 0
+
+        &:last-child
+          padding-right: 0
