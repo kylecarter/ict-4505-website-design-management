@@ -8,8 +8,8 @@ import path from 'path'
 let config = {
   mode: process.env.NODE_ENV,
   output: {
-    publicPath: path.join( __dirname, 'public/' ),
-    path: path.join( __dirname, 'public/js' ),
+    publicPath: path.join( __dirname, 'backend/assets' ),
+    path: path.join( __dirname, 'backend/assets/js' ),
     filename: 'components.js'
   },
   module: {

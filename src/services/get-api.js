@@ -7,7 +7,7 @@ export default {
   handler( req, res, api ) {
     if ( !api ) {
       return (new Promise( ( resolve, reject )=> {
-        resolve( {} );
+        resolve( { data: '' } );
         reject( 'There was a problem processing your request.' );
       }));
     }

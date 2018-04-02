@@ -1,0 +1,22 @@
+.navigation
+  padding: 16px
+
+  li > a
+    font-size: 1.5em
+    font-weight: 700
+    color: $text-color
+    font-family: $headings-font-family
+
+  .project-view &
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+      width: susy-span( 2 of 12 )
+      overflow: scroll
+      height: 100vh
+      float: left
+
+      .menu-home
+        margin-bottom: 42px !important
+
+      li > a
+        display: block
