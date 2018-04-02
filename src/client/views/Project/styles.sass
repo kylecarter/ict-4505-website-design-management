@@ -1,0 +1,22 @@
+.project-view
+  +clearfix
+  padding: 16px
+
+  .project-description
+    font-size: 1.25em
+    margin-bottom: 2em
+    font-family: $headings-font-family
+
+  .tags-header
+    margin-top: 42px
+
+    + .list-tags
+      margin-top: 12px
+
+  +breakpoint( nth( $scale, 5 ) + 1 )
+    display: flex
+    padding-bottom: 42px
+
+    .content
+      width: susy-span( 10 of 12 )
+      float: left

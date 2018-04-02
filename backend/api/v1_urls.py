@@ -17,10 +17,11 @@ Including another URLconf
 from django.urls import path
 
 # Custom
-from projects.views import Collection
+from projects.views import Collection, Assignment
 from . import views
 
 urlpatterns = [
-    path( 'verify/', views.verify, name='verify' ),
     path( 'projects/', Collection.as_view() ),
+    path( 'verify/', views.verify, name='verify' ),
+    path( 'project/<int:project_id>/', Assignment.as_view() ),
 ]

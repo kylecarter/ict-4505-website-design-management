@@ -13,26 +13,29 @@ html, body
     &, &:after, &:before
       box-sizing: inherit
 
-h1, h2, h4, h5, h6
+h1, h2, h3, h4, h5, h6
   font-family: $headings-font-family
   color: $headings-color
+  margin: 16px 0 6px
   font-weight: 700
 
+  &:first-child
+    margin-top: 0
+
+  + ul, + ol
+    margin-top: 12px !important
+
 h1
-  font-size: emify( 48px )
+  font-size: emify( 36px )
 
   +breakpoint( max-width nth( $scale, 5 ) )
     font-size: emify( 32px )
 
 h2
-  font-size: emify( 40px )
-
-  +breakpoint( max-width nth( $scale, 5 ) )
-    font-size: emify( 28px )
+  font-size: emify( 28px )
 
 h3
   font-size: emify( 26px )
-  font-weight: 300
 
 h4
   font-size: emify( 18px )
@@ -47,8 +50,11 @@ h6
 p, li, td, tr, input, label, textarea, select, blockquote
   font-size: 100%
 
-p, li, blockquote
+p, blockquote
   margin-bottom: 16px
+
+li
+  margin-bottom: 6px
 
 .text
 

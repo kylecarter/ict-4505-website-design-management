@@ -5,18 +5,20 @@ import path from 'path'
 
 // Node Modules
 import cors from 'cors'
-import csrf from 'csurf'
 import express from 'express'
+import httpProxy from 'http-proxy'
 import session from 'client-sessions'
 import cookieParser from 'cookie-parser'
 
 // Application > Server
 import router from '../router'
 
+const ASSETS = express.static( path.join( __dirname.replace( /\/build\/server\/*$/, '' ), '/backend/assets' ) );
+const PROXY = httpProxy.createProxyServer({
+  target: 'http://' + process.env.DJANGO_HOST + ':' + process.env.DJANGO_PORT,
+  ws: true
+});
 const APP = express();
-const ASSETS = express.static( path.join( __dirname.replace( /\/build\/server\/*$/, '' ), '/public' ) );
-
-console.log( "APPLICATION configuring..." );
 
 APP.use( cors() );
 APP.use( ASSETS );
@@ -29,14 +31,12 @@ APP.use(session({
   activeDuration: 1000 * 60 * 5
 }));
 
-APP.use(csrf({ cookie: true }));
-APP.use(( req, res, next )=> {
-  var token = req.csrfToken();
-  res.cookie( 'XSRF-TOKEN', token );
-  res.locals.csrfToken = token;
-  next();
+// Proxy admin
+APP.use('/admin', (req, res) => {
+  PROXY.web(req, res, {target: 'http://' + process.env.DJANGO_HOST + ':' + process.env.DJANGO_PORT + '/admin'});
 });
 
+// All other routes
 APP.get( '*', router );
 
 export default APP;

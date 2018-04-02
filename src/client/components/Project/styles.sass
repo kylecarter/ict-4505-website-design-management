@@ -1,0 +1,73 @@
+.list-projects
+  width: 100%
+  +clearfix
+
+  +breakpoint( nth( $scale, 5 ) + 1 )
+    display: flex
+    float: left
+
+  > li
+    margin: 0 0 16px
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+      margin: 0 16px 16px 0
+      width: susy-span( 6 of 12 )
+
+      &:nth-child( even )
+        margin-right: 0
+
+  .project
+    border: thin solid $border-color
+    padding: 10px
+
+    p + a
+      display: inline-block
+      margin: 0 0 16px
+
+.project
+
+  .list-tags
+
+    > li:before
+      content: ''
+      +size( 1em )
+      margin: 0 5px
+      border-radius: 100%
+      display: inline-block
+      background-color: $sixth
+      border: thin solid $sixth
+
+    > li:first-child
+      padding-left: 0
+
+      &:before
+        margin-left: 0
+
+    > li:last-child
+      padding-right: 0
+
+    > .lang
+
+      &-javascript:before
+        border-color: $yellow
+        background-color: $yellow
+
+      &-python:before
+        border-color: $blue
+        background-color: $blue
+
+      &-html:before
+        border-color: $red
+        background-color: $red
+
+      &-css:before
+        border-color: $orange
+        background-color: $orange
+
+      &-sass:before
+        border-color: $pink
+        background-color: $pink
+
+      &-jsx:before
+        border-color: $blueDark
+        background-color: $blueDark

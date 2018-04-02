@@ -8,11 +8,14 @@
     "django": "./backend/manage.py runserver",
     "watch:src": "babel ./src -d build --watch",
     "server:dev": "nodemon --exec babel-node ./build/server/index.js",
+    "babel": "babel ./src -d build && webpack --config ./webpack.config.babel.js",
     "watch:webpack": "webpack --config ./webpack.config.babel.js --color --progress --watch",
-    "start": "parallelshell 'env PYTHONPATH=$PYTHONPATH:$PWD/backend gunicorn backend.wsgi:application --bind $DJANGO_HOST:$DJANGO_PORT' 'babel-node --optimize_for_size --max_old_space_size=920 --gc_interval=100 --expose-gc ./build/server/index.js'",
-    "watch:sass": "node-sass src/client/sass/stylesheet.sass --watch --recursive --precision=8 --include-path=node_modules/ -o public/css/",
-    "dev": "source .env && parallelshell 'npm run watch:sass' 'npm run watch:webpack' 'npm run watch:src' 'npm run server:dev' 'npm run django'",
-    "build": "export NODE_ENV=production && node-sass src/client/sass/stylesheet.sass -r --precision=8 --include-path=node_modules/ -o public/css/ && postcss public/css/stylesheet.css --verbose --env production --replace && babel ./src -d build && webpack --config ./webpack.config.babel.js"
+    "build": "export NODE_ENV=production && npm run sass && npm run postcss && npm run babel",
+    "postcss": "postcss backend/assets/css/stylesheet.css --verbose --env production --replace",
+    "sass": "node-sass src/client/sass/stylesheet.sass -r --precision=8 --include-path=node_modules/ -o backend/assets/css/",
+    "watch:sass": "node-sass src/client/sass/stylesheet.sass --watch --recursive --precision=8 --include-path=node_modules/ -o backend/assets/css/",
+    "dev": "source .env && npm run sass && parallelshell 'npm run watch:sass' 'npm run watch:webpack' 'npm run watch:src' 'npm run server:dev' 'npm run django'",
+    "start": "parallelshell 'env PYTHONPATH=$PYTHONPATH:$PWD/backend gunicorn backend.wsgi:application --bind $DJANGO_HOST:$DJANGO_PORT' 'babel-node --optimize_for_size --max_old_space_size=920 --gc_interval=100 --expose-gc ./build/server/index.js'"
   },
   "engines": {
     "node": "8.10.0",
@@ -71,6 +74,7 @@
     "cors": "2.8.4",
     "csurf": "1.9.0",
     "express": "4.16.3",
+    "http-proxy": "1.16.2",
     "jquery": "3.3.1",
     "jquery-ui": "1.12.1",
     "parallelshell": "3.0.2",

@@ -32,16 +32,20 @@ export default ( req, res )=> {
   let title = null;
   let api = null;
   switch( true ) {
-    case ( !MATCH ):
-      title = "Page Not Found";
-      api = DJANGO + '/api/v1/projects';
-    default:
+    case MATCH && MATCH.url && MATCH.url === '/':
       title = 'Kyle A. Carter | ICT Website Design and Management (online) | Spring 2018';
       api = DJANGO + '/api/v1/projects';
       break;
+    case MATCH && MATCH.url && /project\/[0-9]+/.test( MATCH.url ):
+      title = ' | Project | Kyle A. Carter';
+      api = DJANGO + '/api/v1/project/' + MATCH.params.id;
+      break;
+    default:
+      title = "Page Not Found";
+      api = DJANGO + '/api/v1/projects';
   }
 
-  GetApi.handler( req, res, DJANGO + '/api/v1/verify' ).then( resp => console.log( resp.data ) ).catch( err => console.log( err ) );
+  let description = "Welcome to the class project site for Kyle A. Carter.";
 
   return GetApi.handler( req, res, api ).then( resp => {
     const PROPS = _.extend( {}, resp.data );
@@ -53,7 +57,12 @@ export default ( req, res )=> {
       </StaticRouter>
     );
 
-    return res.status( 200 ).send( MakePage( title, content, PROPS ) );
+    if ( MATCH && MATCH.url && /project\/[0-9]+/.test( MATCH.url ) ) {
+      title = PROPS.project ? PROPS.project.title + title : '404' + title;
+      description = PROPS.project && PROPS.project.description && PROPS.project.description !== '' ? PROPS.project.description : description;
+    }
+
+    return res.status( 200 ).send( MakePage( title, description, content, PROPS ) );
   }).catch( err => {
     console.log( err );
     return res.status( 503 ).send( 'Internal Server Error.' );

@@ -227,7 +227,6 @@ $RECYCLE.BIN/
 
 # custom
 NOTES.md
-public/css/
-public/js/
+backend/assets/*
+!backend/assets/.staticfilesrc
 build/
-heroku-buildpack-runit/
