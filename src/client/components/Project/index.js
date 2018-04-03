@@ -26,7 +26,7 @@ class File extends React.Component {
 
   render () {
     const { title, url } = this.state;
-    return (<li><a href={ url } rel="bookmark" role="link">{ title }</a></li>);
+    return (<li><a className="ico" href={ url } rel="bookmark" role="link">{ title }</a></li>);
   }
 }
 
@@ -49,13 +49,14 @@ export default class Project extends React.Component {
         break;
       default:
         return (<div className="project">
-          <h1>{ title }</h1>
-          { description && <p className="project-description">{ description }</p> }
+          <header className="project-header">
+            <h1>{ title }</h1>
+            { description && <p className="project-description">{ description }</p> }
+            { tags && <ul className="list-inline list-tags">{ tags.map( ( term, index )=> <Tag key={ 'key.react.term.' + term.id + '.' + index } { ...term } /> ) }</ul>}
+          </header>
           { body && <div className="project-body" dangerouslySetInnerHTML={{ __html: body }} />}
           { files && <h2>Project Files</h2> }
           { files && <ul className="list-unstyled list-files">{ files.map( ( file, index )=> <File key={ 'key.react.file.' + file.id + '.' + index } { ...file } /> ) }</ul>}
-          { tags && <h2 className="tags-header">Tags</h2> }
-          { tags && <ul className="list-inline list-tags">{ tags.map( ( term, index )=> <Tag key={ 'key.react.term.' + term.id + '.' + index } { ...term } /> ) }</ul>}
         </div>);
         break;
     }

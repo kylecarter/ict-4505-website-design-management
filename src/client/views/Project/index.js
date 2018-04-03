@@ -10,17 +10,17 @@ import Navigation from '../../components/Navigation'
 
 const _ = underscore;
 
-export default class Home extends React.Component {
+export default class ProjectPage extends React.Component {
   constructor( props ) {
     super( props );
     this.state = _.extend( {}, props );
   }
 
   render() {
-    const { project, projects, navigation } = this.state;
+    const { project, navigation } = this.state;
     if ( project ) {
       return (<div id="main" className="project-view">
-        <Navigation navigation={ navigation } />
+        <Navigation navigation={ navigation } activeID={ project.id } />
         <main role="main" className="content" id="content">
           <Project { ...project } viewMode="default" />
         </main>
