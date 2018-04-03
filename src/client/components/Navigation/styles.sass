@@ -1,18 +1,67 @@
 .navigation
   padding: 16px
 
+  +breakpoint( max-width nth( $scale, 5 ) )
+
+    &:after
+      +position( relative, null null null null )
+      font: font-awesome( 1.5em )
+      content: '\f0c9'
+      display: block
+
+    .list-menu
+      border-right: 2px solid rgba( $secondary, 0.66 )
+      +position( fixed, 0 null null -100% )
+      transition: left 0.15s ease-in-out
+      background-color: $sidebar-bg
+      overflow: scroll
+      width: 250px
+      height: 100%
+
+    &.nav-open
+
+      &:before
+        +position( fixed, 0 null null 0 )
+        background-color: $black
+        +opacity( 0.7 )
+        +size( 100% )
+        content: ''
+
+      &:after
+        left: 250px
+        color: $white
+        content: '\f00d'
+
+      .list-menu
+        left: 0
+
   li > a
     font-size: 1.5em
     font-weight: 700
     color: $text-color
     font-family: $headings-font-family
 
+    &:hover, &:focus, &:active, &.active
+      color: $link-color
+
+    +breakpoint( max-width nth( $scale, 5 ) )
+      border-top: 2px solid rgba( $secondary, 0.66 )
+      font-size: 1em
+      display: block
+      padding: 16px
+
+  li:last-child > a
+
+    +breakpoint( max-width nth( $scale, 5 ) )
+      border-bottom: 2px solid rgba( $secondary, 0.66 )
+
   .project-view &
 
     +breakpoint( nth( $scale, 5 ) + 1 )
+      border-right: 2px solid rgba( $secondary, 0.66 )
+      background-color: $sidebar-bg
       width: susy-span( 2 of 12 )
       overflow: scroll
-      height: 100vh
       float: left
 
       .menu-home
