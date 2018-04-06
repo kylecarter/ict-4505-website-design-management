@@ -7,7 +7,7 @@ export default ()=> {
   return (<section className="sidebar" id="sidebar">
     <div className="sidebar-block sidebar-avatar">
       <a href="/static/project_img/kylecarter_profile.JPG" rel="bookmark" target="_blank"><img className="img-responsive img-rounded" src="/static/project_img/kylecarter_profile_web.JPG" alt="Kyle Carter Headshot" /></a>
-      <h1>Kyle A. Carter</h1>
+      <h2>Kyle A. Carter</h2>
     </div>
     <div className="sidebar-block sidebar-bio">
       <p style={{ marginBottom: 0 }}>An experienced front end developer versed driven by a desire to create scalable, innovative web applications that inspire and promote success</p>

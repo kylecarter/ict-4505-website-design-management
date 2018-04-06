@@ -50,7 +50,7 @@ export default class Project extends React.Component {
       default:
         return (<div className="project">
           <header className="project-header">
-            <h1>{ title }</h1>
+            <h2 className="h1" aria-hidden="true">{ title }</h2>
             { description && <p className="project-description">{ description }</p> }
             { tags && <ul className="list-inline list-tags">{ tags.map( ( term, index )=> <Tag key={ 'key.react.term.' + term.id + '.' + index } { ...term } /> ) }</ul>}
           </header>

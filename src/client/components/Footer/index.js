@@ -15,7 +15,7 @@ export default ()=> {
       </div>
     </div></section>
     <div className="footer-bottom"><div className="wrapper">
-      <h6 class="p">&copy; 2018 Kyle A. Carter</h6>
+      <h6 className="p">&copy; 2018 Kyle A. Carter</h6>
     </div></div>
   </footer>);
 }

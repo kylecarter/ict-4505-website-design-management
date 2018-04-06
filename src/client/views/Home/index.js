@@ -19,9 +19,6 @@ export default class Home extends React.Component {
   render() {
     const { projects } = this.state;
     return (<div id="main" className="home-view">
-      <header className="home-marquee">
-        <h1 class="h3" style={{ padding: '0 16px' }}>ICT Website Design and Management (online) | Spring 2018</h1>
-      </header>
       <div className="wrapper">
         <Sidebar />
         <section role="main" className="content" id="content">

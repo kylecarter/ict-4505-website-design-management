@@ -29,7 +29,6 @@ export default class ProjectPage extends React.Component {
       return (<div id="main" className="project-view">
         <Navigation navigation={ navigation } />
         <section role="main" className="content" id="content">
-          <h1>404, project not found</h1>
           <p>Please use the navigation links to view a project.</p>
         </section>
       </div>);
