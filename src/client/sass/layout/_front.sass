@@ -1,0 +1,18 @@
+.front
+
+  > h1:first-child
+    text-shadow: 0 1px 4px $sixth
+    background-color: $sixth
+    padding: 16px
+    color: $white
+    width: 100%
+    @extend .h3
+
+    .wrapper
+      +container
+      display: block
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+      background: $white url( '/static/project_img/banner.JPG' ) no-repeat center top
+      background-size: 100% auto
+      padding: 12% 16px
