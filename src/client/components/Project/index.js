@@ -26,7 +26,7 @@ class File extends React.Component {
 
   render () {
     const { title, url } = this.state;
-    return (<li><a className="ico" href={ url } rel="bookmark" role="link">{ title }</a></li>);
+    return (<li><a className="ico" href={ url } rel="bookmark">{ title }</a></li>);
   }
 }
 

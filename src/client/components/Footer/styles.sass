@@ -8,6 +8,11 @@
     padding: 18px 16px
     color: $white
 
+    .h4
+      color: inherit
+      display: inline-block
+      font-family: $font-family-base
+
     .wrapper
       +container
 
@@ -15,10 +20,9 @@
   &-bottom
     color: $white
     padding: 16px
+    font-size: emify( $font-size-small )
     background-color: $footer-secondary
 
-    +breakpoint( max-width nth( $scale, 5 ) )
-      font-size: 10px
 
     ul
       border-bottom: thin solid $white
@@ -48,12 +52,9 @@
   &-social
     +clearfix()
 
-    .text-uppercase
-      font-size: emify( 15px )
-      font-weight: 700
+    .h4
 
       +breakpoint( max-width nth( $scale, 5 ) )
-        display: inline-block
         float: left
 
     ul

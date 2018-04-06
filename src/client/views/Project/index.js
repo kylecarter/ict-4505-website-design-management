@@ -21,17 +21,17 @@ export default class ProjectPage extends React.Component {
     if ( project ) {
       return (<div id="main" className="project-view">
         <Navigation navigation={ navigation } activeID={ project.id } />
-        <main role="main" className="content" id="content">
+        <section role="main" className="content" id="content">
           <Project { ...project } viewMode="default" />
-        </main>
+        </section>
       </div>);
     } else {
       return (<div id="main" className="project-view">
         <Navigation navigation={ navigation } />
-        <main role="main" className="content" id="content">
+        <section role="main" className="content" id="content">
           <h1>404, project not found</h1>
           <p>Please use the navigation links to view a project.</p>
-        </main>
+        </section>
       </div>);
     }
   }
