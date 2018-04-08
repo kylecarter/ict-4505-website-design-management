@@ -19,7 +19,7 @@ export default class Home extends React.Component {
   render() {
     const { projects } = this.state;
     return (<main className="home-view">
-      <h1 class="h1"><span class="wrapper"> ICT Website Design and Management (online) | Spring 2018</span></h1>
+      <h1 class="h1 page-title"><span class="wrapper"> ICT Website Design and Management (online) | Spring 2018</span></h1>
       <article className="wrapper">
         <Sidebar />
         <section className="content" id="content">

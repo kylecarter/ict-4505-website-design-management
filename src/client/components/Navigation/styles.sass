@@ -1,6 +1,11 @@
 .navigation
   padding: 16px
 
+  +breakpoint( nth( $scale, 5 ) + 1 )
+
+    .list-menu > li
+      margin-bottom: 16px
+
   +breakpoint( max-width nth( $scale, 5 ) )
 
     &:after
