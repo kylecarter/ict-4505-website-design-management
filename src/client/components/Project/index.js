@@ -26,7 +26,7 @@ class File extends React.Component {
 
   render () {
     const { title, url } = this.state;
-    return (<li><a className="ico" href={ url } rel="bookmark" role="link">{ title }</a></li>);
+    return (<li><a className="ico" href={ url } rel="bookmark">{ title }</a></li>);
   }
 }
 
@@ -41,23 +41,25 @@ export default class Project extends React.Component {
     switch( true ) {
       case /^list$/gi.test( viewMode ):
         return (<li><div className="project">
-          <h4>{ title }</h4>
+          <h4 className="project-title">{ title }</h4>
           { description && <p>{ description }</p> }
           <a href={ '/project/' + id }>View Project</a>
           { tags && <ul className="list-inline list-tags">{ tags.map( ( term, index )=> <Tag key={ 'key.react.term.' + term.id + '.' + index } { ...term } /> ) }</ul>}
         </div></li>);
         break;
       default:
-        return (<div className="project">
+        return (<article className="project">
           <header className="project-header">
-            <h1>{ title }</h1>
+            <h1 className="h1 page-title">{ title }</h1>
             { description && <p className="project-description">{ description }</p> }
             { tags && <ul className="list-inline list-tags">{ tags.map( ( term, index )=> <Tag key={ 'key.react.term.' + term.id + '.' + index } { ...term } /> ) }</ul>}
           </header>
-          { body && <div className="project-body" dangerouslySetInnerHTML={{ __html: body }} />}
-          { files && <h2>Project Files</h2> }
-          { files && <ul className="list-unstyled list-files">{ files.map( ( file, index )=> <File key={ 'key.react.file.' + file.id + '.' + index } { ...file } /> ) }</ul>}
-        </div>);
+          { body && <section className="project-body" dangerouslySetInnerHTML={{ __html: body }} />}
+          <section className="project-files">
+            { files && <h2>Project Files</h2> }
+            { files && <ul className="list-unstyled list-files">{ files.map( ( file, index )=> <File key={ 'key.react.file.' + file.id + '.' + index } { ...file } /> ) }</ul>}
+          </section>
+        </article>);
         break;
     }
   }

@@ -9,7 +9,7 @@ const window = window || {};
 
 const NavItem = ( props )=> {
   const { activeID, data } = props;
-  return <li><a className={ activeID === data.id ? 'active' : '' } href={ '/project' + data.id } rel="bookmark" role="link">{ data.title }</a></li>;
+  return <li><a className={ activeID === data.id ? 'active' : '' } href={ '/project/' + data.id } rel="bookmark">{ data.title }</a></li>;
 }
 
 export default class Navigation extends React.Component {
@@ -23,9 +23,9 @@ export default class Navigation extends React.Component {
 
   render() {
     const { activeID, expose, navigation } = this.state;
-    return (<nav role="navigation" id="navigation" className={ expose ? 'navigation nav-open' : 'navigation' } onClick={ this.toggle }>
+    return (<nav id="navigation" className={ expose ? 'navigation nav-open' : 'navigation' } onClick={ this.toggle }>
       <ul className="list-unstyled list-menu">
-        <li className="menu-home"><a href="/" rel="bookmark" role="link">Home</a></li>
+        <li className="menu-home"><a href="/" rel="bookmark">Home</a></li>
         { navigation.map( ( data, index )=> <NavItem key={ 'react.nav.' + data.id + '.' + index } activeID={ activeID } data={ data } /> ) }
       </ul>
     </nav>);
