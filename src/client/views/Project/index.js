@@ -18,20 +18,13 @@ export default class ProjectPage extends React.Component {
 
   render() {
     const { project, navigation } = this.state;
-    if ( project ) {
-      return (<div id="main" className="project-view">
-        <Navigation navigation={ navigation } activeID={ project.id } />
-        <section role="main" className="content" id="content">
-          <Project { ...project } viewMode="default" />
-        </section>
-      </div>);
-    } else {
-      return (<div id="main" className="project-view">
-        <Navigation navigation={ navigation } />
-        <section role="main" className="content" id="content">
-          <p>Please use the navigation links to view a project.</p>
-        </section>
-      </div>);
-    }
+
+    return (<div className="project-view">
+      <Navigation navigation={ navigation } activeID={ project.id } />
+      <main className="content" id="content">
+        { project && <Project { ...project } viewMode="default" /> }
+        { !project && <p>Please use the navigation links to view a project.</p> }
+      </main>
+    </div>);
   }
 }

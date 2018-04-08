@@ -19,8 +19,7 @@ export default ( title, description, content, props, classList )=> {
       <link href="/css/stylesheet.css" rel="stylesheet" />
     </head>
     <body class="${ classList.join( ' ' ) }">
-      <h1 class="h1"><span class="wrapper">${ title ? title : 'Kyle A. Carter' }</span></h1>
-      <div id="app">${ content }</div>
+      ${ content }
       <script>
         window.__PROJECTS_INITIAL_STATE__ = ${ JSON.stringify( props ).replace( /</g, '\\u003c' ) };
         document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );

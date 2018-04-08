@@ -26,13 +26,13 @@ export default class Routes extends React.Component {
   }
 
   render() {
-    return (<article id="article">
-      <Switch>
+    return (<div id="app">
+      <div className="react-app"><Switch>
         <Route path="/" exact render={ ()=> (<Home projects={ this.state.projects || [] } />) } />
         <Route path="/project/:id" exact render={ ()=> (<Project project={ this.state.project || null } navigation={ this.state.navigation } />) } />
         <Route render={ ()=> <FourOhFour projects={ this.state.projects || [] } /> } />
-      </Switch>
+      </Switch></div>
       <Footer />
-    </article>);
+    </div>);
   }
 }
