@@ -29,18 +29,21 @@ export default ( req, res )=> {
   let status = 200;
   if ( !MATCH ) status = 404;
 
+  let classList = null;
   let title = null;
   let api = null;
   switch( true ) {
     case MATCH && MATCH.url && MATCH.url === '/':
-      title = 'Kyle A. Carter | ICT Website Design and Management (online) | Spring 2018';
+      title = 'ICT Website Design and Management (online) | Spring 2018';
+      classList = [ 'front' ];
       api = DJANGO + '/api/v1/projects';
       break;
     case MATCH && MATCH.url && /project\/[0-9]+/.test( MATCH.url ):
-      title = ' | Project | Kyle A. Carter';
+      classList = [ 'model-project' ];
       api = DJANGO + '/api/v1/project/' + MATCH.params.id;
       break;
     default:
+      classList = [ 'fourohfour' ];
       title = "Page Not Found";
       api = DJANGO + '/api/v1/projects';
   }
@@ -58,11 +61,12 @@ export default ( req, res )=> {
     );
 
     if ( MATCH && MATCH.url && /project\/[0-9]+/.test( MATCH.url ) ) {
-      title = PROPS.project ? PROPS.project.title + title : '404' + title;
+      classList = classList.concat( [ 'model-' + PROPS.project.id ] )
+      title = PROPS.project ? PROPS.project.title : '404';
       description = PROPS.project && PROPS.project.description && PROPS.project.description !== '' ? PROPS.project.description : description;
     }
 
-    return res.status( 200 ).send( MakePage( title, description, content, PROPS ) );
+    return res.status( 200 ).send( MakePage( title, description, content, PROPS, classList ) );
   }).catch( err => {
     console.log( err );
     return res.status( 503 ).send( 'Internal Server Error.' );

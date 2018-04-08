@@ -9,42 +9,8 @@
       flex-wrap: wrap
       align-items: stretch
 
-
-  &-marquee
-    background-color: $senary
-    padding: 16px
-    width: 100%
-
-    h3
-      +container
-      color: $white
-      font-weight: 700
-      text-shadow: 0 1px 4px $senary
-
-    +breakpoint( nth( $scale, 5 ) + 1 )
-      background: $white url( '/static/project_img/banner.JPG' ) no-repeat center top
-      background-size: 100% auto
-      padding: 12% 16px
-
   &-title
     color: $primary
-
-  &-view .sidebar
-
-    .list-meta > li
-      margin-bottom: 10px
-
-    +breakpoint( nth( $scale, 5 ) + 1 )
-      margin-top: -75px
-
-    a + h1
-      font-size: 2em
-      margin: 16px 0 0
-
-    &-block
-      background-color: $white
-      margin-bottom: 21px
-      padding: 16px
 
   &-view .content
 

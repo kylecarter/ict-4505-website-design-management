@@ -4,7 +4,6 @@ html, body
   -moz-osx-font-smoothing: grayscale
   background-color: $matte-bg
   box-sizing: border-box
-  font-smooth: always
   color: $text-color
   padding: 0
   margin: 0
@@ -25,27 +24,33 @@ h1, h2, h3, h4, h5, h6
   + ul, + ol
     margin-top: 12px !important
 
-h1
+h1, .h1
   font-size: emify( 36px )
 
   +breakpoint( max-width nth( $scale, 5 ) )
     font-size: emify( 32px )
 
-h2
+h2, .h2
   font-size: emify( 28px )
 
-h3
+h3, .h3
   font-size: emify( 26px )
 
-h4
+h4, .h4
   font-size: emify( 18px )
 
-h5
+h5, .h5
   margin: 0 0 24px
   font-size: emify( 16px )
 
-h6
+h6, .h6
   font-size: emify( 13px )
+
+.p
+  font-family: $font-family-base
+  font-weight: 400
+  font-size: 1em
+  color: inherit
 
 p, li, td, tr, input, label, textarea, select, blockquote
   font-size: 100%
