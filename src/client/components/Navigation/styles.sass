@@ -3,74 +3,91 @@
 
   +breakpoint( nth( $scale, 5 ) + 1 )
 
-    .list-menu > li
+    .two-column & .list-menu > li
       margin-bottom: 16px
 
-  +breakpoint( max-width nth( $scale, 5 ) )
+    .full-width &
+      display: inline
 
-    &:after
-      +position( relative, null null null null )
-      font: font-awesome( 1.5em )
-      content: '\f0c9'
-      display: block
+  .full-width &
 
     .list-menu
-      border-right: 2px solid rgba( $secondary, 0.66 )
-      +position( fixed, 0 null null -100% )
-      transition: left 0.15s ease-in-out
-      background-color: $sidebar-bg
+      background-color: $secondary
+      background-color: rgba( $secondary, 0.95 )
+      +position( fixed, -100% null null 0 )
+      transition: top 0.15s ease-in-out
       overflow: scroll
-      width: 250px
-      height: 100%
+      z-index: 10000
+      +size( 100% )
+      border: 0
+
+      > li > a
+        color: $white
+        display: block
+        padding: 10px 16px
+        text-align: center
+
+        &:hover, &:focus, &:active
+          color: $white
 
     &.nav-open
 
-      &:before
-        +position( fixed, 0 null null 0 )
-        background-color: $black
-        +opacity( 0.7 )
-        +size( 100% )
-        content: ''
+      .list-menu
+        top: 0
+        padding-top: 50px
 
-      &:after
-        left: 250px
-        color: $white
-        content: '\f00d'
+  +breakpoint( max-width nth( $scale, 5 ) )
+
+    .list-menu
+      background-color: $secondary
+      background-color: rgba( $secondary, 0.95 )
+      +position( fixed, -100% null null 0 )
+      transition: top 0.15s ease-in-out
+      overflow: scroll
+      z-index: 10000
+      +size( 100% )
+      border: 0
+
+    &.nav-open
 
       .list-menu
-        left: 0
+        top: 0
+        padding-top: 50px
 
   li > a
-    font-size: 1.5em
     font-weight: 700
     color: $text-color
     font-family: $headings-font-family
+    font-size: emify( $font-size-large )
+
+    +breakpoint( max-width nth( $scale, 5 ) )
+      color: $white
+      text-shadow: 0px 1px 3px rgba( $black, 0.6 )
 
     &:hover, &:focus, &:active, &.active
       color: $link-color
 
+      +breakpoint( max-width nth( $scale, 5 ) )
+        color: $white
+
     +breakpoint( max-width nth( $scale, 5 ) )
-      border-top: 2px solid rgba( $secondary, 0.66 )
-      font-size: 1em
       display: block
-      padding: 16px
-
-  li:last-child > a
-
-    +breakpoint( max-width nth( $scale, 5 ) )
-      border-bottom: 2px solid rgba( $secondary, 0.66 )
+      text-align: center
+      padding: 10px 16px
 
   .project-view &
 
     +breakpoint( nth( $scale, 5 ) + 1 )
-      border-right: 2px solid rgba( $secondary, 0.66 )
-      background-color: $sidebar-bg
-      width: susy-span( 3 of 12 )
-      overflow: scroll
-      float: left
 
-      .menu-home
-        margin-bottom: 42px !important
+      .two-column &
+        border-right: 2px solid rgba( $secondary, 0.66 )
+        background-color: $sidebar-bg
+        width: susy-span( 3 of 12 )
+        overflow: scroll
+        float: left
+
+        .menu-home
+          margin-bottom: 42px !important
 
       li > a
         display: block

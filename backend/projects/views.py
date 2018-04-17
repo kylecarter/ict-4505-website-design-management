@@ -21,6 +21,7 @@ class Collection( View ):
                 'body': project.body,
                 'title': project.title,
                 'description': project.description,
+                'landing_page': project.landing_page,
                 'tags': list( project.tags.all().values() ),
                 'files': list( project.files.all().values() ),
             })
@@ -48,6 +49,7 @@ class Assignment( View ):
                 'body': project.body,
                 'title': project.title,
                 'description': project.description,
+                'landing_page': project.landing_page,
                 'tags': list( project.tags.all().values() ),
                 'files': list( project.files.all().values() ),
             }

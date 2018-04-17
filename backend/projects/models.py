@@ -28,6 +28,7 @@ class Project( models.Model ):
         web page." )
     files = models.ManyToManyField( File )
     tags = models.ManyToManyField( Tag )
+    landing_page = models.BooleanField( default=False )
 
     def __str__( self ):
         return "{0}<{1}>".format( self.title, self.id )

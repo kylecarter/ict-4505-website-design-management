@@ -11,7 +11,13 @@ import {
 } from 'react-router-dom'
 
 // Source > Client > Views
-import { FiveHundredErrors, FourOhFour, Home, Project } from '../views'
+import {
+  FiveHundredErrors,
+  FourOhFour,
+  Home,
+  LandingPage,
+  Project
+} from '../views'
 
 // Source > Client > Components
 import Footer from '../components/Footer'
@@ -29,7 +35,12 @@ export default class Routes extends React.Component {
     return (<div id="app">
       <div className="react-app"><Switch>
         <Route path="/" exact render={ ()=> (<Home projects={ this.state.projects || [] } />) } />
-        <Route path="/project/:id" exact render={ ()=> (<Project project={ this.state.project || null } navigation={ this.state.navigation } />) } />
+        <Route path="/project/:id" exact render={ ()=> {
+          if ( this.state.project && this.state.project.landing_page ) {
+            return (<LandingPage project={ this.state.project || null } navigation={ this.state.navigation } />)
+          }
+          return (<Project project={ this.state.project || null } navigation={ this.state.navigation } />);
+        }} />
         <Route render={ ()=> <FourOhFour projects={ this.state.projects || [] } /> } />
       </Switch></div>
       <Footer />

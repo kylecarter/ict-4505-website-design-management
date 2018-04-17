@@ -32,8 +32,9 @@ APP.use(session({
 }));
 
 // Proxy admin
+APP.enable('trust proxy');
 APP.use('/admin', (req, res) => {
-  PROXY.web(req, res, {target: 'http://' + process.env.DJANGO_HOST + ':' + process.env.DJANGO_PORT + '/admin'});
+  PROXY.web(req, res, {target: req.protocol + '://' + process.env.DJANGO_HOST + ':' + process.env.DJANGO_PORT + '/admin'});
 });
 
 // All other routes

@@ -5,6 +5,7 @@ import { matchPath } from 'react-router-dom'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter } from 'react-router'
 import underscore from 'underscore'
+import slugify from 'slugify'
 import React from 'react'
 
 // Application > Server
@@ -29,7 +30,7 @@ export default ( req, res )=> {
   let status = 200;
   if ( !MATCH ) status = 404;
 
-  let classList = null;
+  let classList = [];
   let title = null;
   let api = null;
   switch( true ) {
@@ -43,7 +44,7 @@ export default ( req, res )=> {
       api = DJANGO + '/api/v1/project/' + MATCH.params.id;
       break;
     default:
-      classList = [ 'fourohfour' ];
+      classList = [ 'four-oh-four' ];
       title = "Page Not Found";
       api = DJANGO + '/api/v1/projects';
   }
@@ -61,9 +62,9 @@ export default ( req, res )=> {
     );
 
     if ( MATCH && MATCH.url && /project\/[0-9]+/.test( MATCH.url ) ) {
-      classList = classList.concat( [ 'model-' + PROPS.project.id ] )
       title = PROPS.project ? PROPS.project.title : '404';
-      description = PROPS.project && PROPS.project.description && PROPS.project.description !== '' ? PROPS.project.description : description;
+      description = PROPS.project && PROPS.project.description ? PROPS.project.description : description;
+      classList = PROPS.project ? classList.concat( [ 'project-' + PROPS.project.id, ( 'project-' + slugify( PROPS.project.title ) ).toLowerCase(), PROPS.project.landing_page ? 'full-width' : 'two-column' ] ) : classList.concat( [ 'four-oh-four' ] );
     }
 
     return res.status( 200 ).send( MakePage( title, description, content, PROPS, classList ) );
