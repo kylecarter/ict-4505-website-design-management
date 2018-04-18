@@ -25,7 +25,6 @@ a[href]
         float: right
         display: block
         +size( 18px, 4px )
-        text-align: right
         border-radius: 2px
         margin-bottom: 4px
         background-color: $link-color
@@ -33,6 +32,7 @@ a[href]
       &:before, &:after
         clear: both
         content: ''
+        float: right
         display: block
         +size( 25px, 4px )
         border-radius: 2px
@@ -42,9 +42,17 @@ a[href]
       &:before
         margin-bottom: 4px
 
+      .full-width &
+        padding: 11px 9px
+        border-radius: 100%
+        display: inline-block
+        background-color: $white
+        +position( fixed, 12px 16px null auto)
+        box-shadow: 0 1px 3px rgba( $black, 0.6 )
+
       .nav-open &
         z-index: 10001
-        left: 96%
+        right: 0
 
         > .ico-navicon
           @extend .sr-only
@@ -59,16 +67,13 @@ a[href]
         &:after
           transform: rotate( -45deg )
 
+        .full-width &
+          background-color: transparent
+          box-shadow: none
+          border-radius: 0
+
       +breakpoint( nth( $scale, 5 ) + 1 )
         display: none
-
-        .full-width &
-          padding: 11px 9px
-          border-radius: 100%
-          display: inline-block
-          background-color: $white
-          +position( fixed, 12px 16px null auto)
-          box-shadow: 0 1px 3px rgba( $black, 0.6 )
 
         .full-width .nav-open &
           background-color: transparent

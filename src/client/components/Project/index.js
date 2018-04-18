@@ -14,7 +14,7 @@ class Tag extends React.Component {
 
   render () {
     const { term } = this.state;
-    return (<li className={ 'lang-' + term.toLowerCase() }>{ term }</li>);
+    return (<li className=" 'lang-' + term.toLowerCase() ">{ term }</li>);
   }
 }
 
@@ -49,16 +49,50 @@ export default class Project extends React.Component {
         break;
       default:
         return (<article className="project">
-          <header className="project-header">
+          <header className="project-header"><div className="wrapper">
             <h1 className="h1 page-title">{ title }</h1>
             { description && <p className="project-description">{ description }</p> }
             { tags && <ul className="list-inline list-tags">{ tags.map( ( term, index )=> <Tag key={ 'key.react.term.' + term.id + '.' + index } { ...term } /> ) }</ul>}
-          </header>
+          </div></header>
           { body && <section className="project-body" dangerouslySetInnerHTML={{ __html: body }} />}
-          <section className="project-files">
+          <div className="three-up-icon-txt">
+            <div className="icon-txt">
+              <div className="icon"><span className="fa fa-area-chart"></span></div>
+              <div className="txt"><h4>Lorem Ipsum</h4><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
+            </div>
+            <div className="icon-txt">
+              <div className="icon"><span className="fa fa-area-chart"></span></div>
+              <div className="txt"><h4>Lorem Ipsum</h4><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
+            </div>
+            <div className="icon-txt">
+              <div className="icon"><span className="fa fa-area-chart"></span></div>
+              <div className="txt"><h4>Lorem Ipsum</h4><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
+            </div>
+            <div className="icon-txt">
+              <div className="icon"><span className="fa fa-area-chart"></span></div>
+              <div className="txt"><h4>Lorem Ipsum</h4><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
+            </div>
+            <div className="icon-txt">
+              <div className="icon"><span className="fa fa-area-chart"></span></div>
+              <div className="txt"><h4>Lorem Ipsum</h4><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
+            </div>
+            <div className="icon-txt">
+              <div className="icon"><span className="fa fa-area-chart"></span></div>
+              <div className="txt"><h4>Lorem Ipsum</h4><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
+            </div>
+          </div>
+          <div className="split-image-txt"><div className="wrapper">
+            <div className="split-image-txt-img">
+              <h3>Lorem Pixel</h3>
+            </div>
+            <div className="split-image-txt-copy">
+              <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+            </div>
+          </div></div>
+          <footer className="project-files">
             { files && <h2>Project Files</h2> }
             { files && <ul className="list-unstyled list-files">{ files.map( ( file, index )=> <File key={ 'key.react.file.' + file.id + '.' + index } { ...file } /> ) }</ul>}
-          </section>
+          </footer>
         </article>);
         break;
     }
