@@ -25,7 +25,7 @@ const _ = underscore;
 
 export default ( req, res )=> {
   const MATCH = ROUTES.reduce( ( acc, route )=> matchPath( req.url, { path: route, exact: true } ) || acc, null );
-  const DJANGO = req.protocol + '://' + process.env.DJANGO_HOST + ':' + process.env.DJANGO_PORT;
+  const DJANGO = 'http://' + process.env.DJANGO_HOST + ':' + process.env.DJANGO_PORT;
 
   let status = 200;
   if ( !MATCH ) status = 404;
