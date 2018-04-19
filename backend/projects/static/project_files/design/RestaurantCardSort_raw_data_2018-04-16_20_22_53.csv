@@ -1,0 +1,151 @@
+participant,login entry,card index,card label,category label,complete,comment,start time,finish time,sorted position
+1,"",5,Hours of operation,Hours,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,1
+1,"",9,Special Offers,Specials,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,1
+1,"",10,Coupons,Specials,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,2
+1,"",12,Special Events,Specials,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,3
+1,"",11,Promotions,Specials,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,4
+1,"",16,Telephone Number,Contact Info,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,1
+1,"",14,Email Address,Contact Info,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,2
+1,"",15,Physical Address,Contact Info,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,3
+1,"",3,Entree,Menu,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,1
+1,"",19,Ingredients,Menu,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,2
+1,"",20,Protein Options,Menu,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,3
+1,"",23,Dinner Options,Menu,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,4
+1,"",6,Sides to go along with an Entree,Menu,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,5
+1,"",21,Breakfast Options,Menu,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,6
+1,"",22,Lunch Options,Menu,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,7
+1,"",7,Add ons to an Entree,Menu,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,8
+1,"",24,Late Night Options,Menu,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,9
+1,"",13,Catering Informaiton,Catering,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,1
+1,"",8,Driving Directions,Where,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,1
+1,"",2,Map of locations,Where,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,2
+1,"",1,Mission Statement,Operations,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,1
+1,"",17,Policies,Operations,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,2
+1,"",4,History of the business,Operations,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,3
+1,"",25,Merchandise,Operations,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,4
+1,"",18,Large Party Policies,Operations,1,,2018-04-14 21:25:53,2018-04-14 21:34:40,5
+2,"",5,Hours of operation,operations,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,1
+2,"",15,Physical Address,operations,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,2
+2,"",14,Email Address,operations,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,3
+2,"",17,Policies,operations,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,4
+2,"",13,Catering Informaiton,operations,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,5
+2,"",18,Large Party Policies,operations,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,6
+2,"",8,Driving Directions,operations,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,7
+2,"",16,Telephone Number,operations,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,8
+2,"",2,Map of locations,operations,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,9
+2,"",21,Breakfast Options,food options,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,1
+2,"",22,Lunch Options,food options,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,2
+2,"",9,Special Offers,food options,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,3
+2,"",24,Late Night Options,food options,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,4
+2,"",19,Ingredients,food options,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,5
+2,"",7,Add ons to an Entree,food options,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,6
+2,"",20,Protein Options,food options,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,7
+2,"",23,Dinner Options,food options,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,8
+2,"",3,Entree,food options,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,9
+2,"",6,Sides to go along with an Entree,food options,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,10
+2,"",4,History of the business,history and info,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,1
+2,"",11,Promotions,history and info,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,2
+2,"",12,Special Events,history and info,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,3
+2,"",1,Mission Statement,history and info,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,4
+2,"",25,Merchandise,history and info,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,5
+2,"",10,Coupons,history and info,1,,2018-04-14 21:37:30,2018-04-14 21:42:38,6
+3,"",5,Hours of operation,Bacon,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,1
+3,"",16,Telephone Number,Bacon,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,2
+3,"",15,Physical Address,Bacon,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,3
+3,"",2,Map of locations,Bacon,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,4
+3,"",14,Email Address,Bacon,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,5
+3,"",19,Ingredients,Sausage,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,1
+3,"",20,Protein Options,Sausage,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,2
+3,"",21,Breakfast Options,Sausage,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,3
+3,"",23,Dinner Options,Sausage,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,4
+3,"",22,Lunch Options,Sausage,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,5
+3,"",3,Entree,Sausage,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,6
+3,"",7,Add ons to an Entree,Sausage,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,7
+3,"",6,Sides to go along with an Entree,Sausage,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,8
+3,"",24,Late Night Options,Sausage,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,9
+3,"",4,History of the business,Beef,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,1
+3,"",1,Mission Statement,Beef,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,2
+3,"",17,Policies,Beef,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,3
+3,"",18,Large Party Policies,Beef,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,4
+3,"",8,Driving Directions,Beef,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,5
+3,"",25,Merchandise,Beef,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,6
+3,"",10,Coupons,Mutton,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,1
+3,"",9,Special Offers,Mutton,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,2
+3,"",12,Special Events,Mutton,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,3
+3,"",11,Promotions,Mutton,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,4
+3,"",13,Catering Informaiton,Mutton,1,,2018-04-14 21:43:34,2018-04-14 21:49:18,5
+4,"",5,Hours of operation,General Information,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,1
+4,"",16,Telephone Number,General Information,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,2
+4,"",14,Email Address,General Information,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,3
+4,"",2,Map of locations,General Information,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,4
+4,"",15,Physical Address,General Information,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,5
+4,"",8,Driving Directions,General Information,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,6
+4,"",21,Breakfast Options,Dining Options,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,1
+4,"",22,Lunch Options,Dining Options,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,2
+4,"",23,Dinner Options,Dining Options,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,3
+4,"",24,Late Night Options,Dining Options,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,4
+4,"",25,Merchandise,Merch and Specials,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,1
+4,"",10,Coupons,Merch and Specials,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,2
+4,"",9,Special Offers,Merch and Specials,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,3
+4,"",11,Promotions,Merch and Specials,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,4
+4,"",3,Entree,Entree Details,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,1
+4,"",19,Ingredients,Entree Details,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,2
+4,"",20,Protein Options,Entree Details,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,3
+4,"",6,Sides to go along with an Entree,Entree Details,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,4
+4,"",7,Add ons to an Entree,Entree Details,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,5
+4,"",1,Mission Statement,More About Us,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,1
+4,"",4,History of the business,More About Us,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,2
+4,"",12,Special Events,More About Us,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,3
+4,"",13,Catering Informaiton,More About Us,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,4
+4,"",17,Policies,More About Us,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,5
+4,"",18,Large Party Policies,More About Us,1,,2018-04-14 22:16:53,2018-04-14 22:34:55,6
+5,"",22,Lunch Options,Menus,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,1
+5,"",21,Breakfast Options,Menus,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,2
+5,"",23,Dinner Options,Menus,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,3
+5,"",24,Late Night Options,Menus,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,4
+5,"",16,Telephone Number,contact info,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,1
+5,"",15,Physical Address,contact info,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,2
+5,"",14,Email Address,contact info,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,3
+5,"",9,Special Offers,for cheap bastards,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,1
+5,"",11,Promotions,for cheap bastards,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,2
+5,"",10,Coupons,for cheap bastards,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,3
+5,"",1,Mission Statement,business info,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,1
+5,"",4,History of the business,business info,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,2
+5,"",17,Policies,business info,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,3
+5,"",18,Large Party Policies,business info,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,4
+5,"",25,Merchandise,business info,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,5
+5,"",5,Hours of operation,logistical info,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,1
+5,"",8,Driving Directions,logistical info,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,2
+5,"",2,Map of locations,logistical info,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,3
+5,"",3,Entree,what's on the plate,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,1
+5,"",19,Ingredients,what's on the plate,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,2
+5,"",20,Protein Options,what's on the plate,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,3
+5,"",6,Sides to go along with an Entree,what's on the plate,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,4
+5,"",7,Add ons to an Entree,what's on the plate,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,5
+5,"",12,Special Events,big numbers,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,1
+5,"",13,Catering Informaiton,big numbers,1,,2018-04-14 23:29:06,2018-04-14 23:35:32,2
+6,"",1,Mission Statement,"Non food, non tactical stuff",1,,2018-04-16 20:18:31,2018-04-16 20:22:53,1
+6,"",4,History of the business,"Non food, non tactical stuff",1,,2018-04-16 20:18:31,2018-04-16 20:22:53,2
+6,"",25,Merchandise,"Non food, non tactical stuff",1,,2018-04-16 20:18:31,2018-04-16 20:22:53,3
+6,"",12,Special Events,"Non food, non tactical stuff",1,,2018-04-16 20:18:31,2018-04-16 20:22:53,4
+6,"",21,Breakfast Options,Food and menu,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,1
+6,"",22,Lunch Options,Food and menu,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,2
+6,"",3,Entree,Food and menu,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,3
+6,"",7,Add ons to an Entree,Food and menu,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,4
+6,"",23,Dinner Options,Food and menu,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,5
+6,"",20,Protein Options,Food and menu,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,6
+6,"",6,Sides to go along with an Entree,Food and menu,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,7
+6,"",19,Ingredients,Food and menu,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,8
+6,"",24,Late Night Options,Food and menu,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,9
+6,"",18,Large Party Policies,Food and menu,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,10
+6,"",13,Catering Informaiton,Food and menu,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,11
+6,"",5,Hours of operation,Tactical Stuff,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,1
+6,"",16,Telephone Number,Tactical Stuff,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,2
+6,"",14,Email Address,Tactical Stuff,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,3
+6,"",15,Physical Address,Tactical Stuff,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,4
+6,"",2,Map of locations,Tactical Stuff,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,5
+6,"",17,Policies,Tactical Stuff,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,6
+6,"",8,Driving Directions,Tactical Stuff,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,7
+6,"",11,Promotions,Save $$,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,1
+6,"",9,Special Offers,Save $$,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,2
+6,"",10,Coupons,Save $$,1,,2018-04-16 20:18:31,2018-04-16 20:22:53,3

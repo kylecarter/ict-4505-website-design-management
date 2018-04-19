@@ -43,19 +43,42 @@
 
   .full-width &
 
+    .project
+      padding-bottom: 0
+
     .wrapper
       +container
+      padding: 0 16px
       +position( relative, null null null null )
 
     .page-title
       color: inherit
 
+    .project-body > .wrapper
+      margin: 16px auto
+
+      +breakpoint( nth( $scale, 5 ) + 1 )
+        margin: 8% auto
+
     .project-header
       +position( relative, null null null null )
       background-color: $tertiary
-      padding: 0 16px
       color: $white
+      padding: 0
       margin: 0
+
+      .project-files
+        padding: 0
+        margin-top: 32px
+
+      h2
+        color: inherit
+
+      .lnk, a[href]
+        color: lighten( $blue, 10% )
+
+        &:hover, &:focus, &:active
+          color: lighten( $blue, 20% )
 
       &:before
         background-color: rgba( $black, 0.6 )
@@ -70,49 +93,8 @@
           top: 10%
           bottom: 10%
 
-      +breakpoint( nth( $scale, 5 ) + 1 )
-        background:
-          image: url( 'http://lorempixel.com/1440/500' )
-          position: center
-          repeat: no-repeat
-          size: 100% auto
-
     .content
       padding: 0
-
-    .split-image-txt
-      background-color: $secondary
-      color: $white
-      +clearfix
-
-      +breakpoint( nth( $scale, 5 ) + 1 )
-        background: $secondary url( 'http://lorempixel.com/720/500' ) left no-repeat
-        background-size: 45% auto
-
-      h3
-        color: inherit
-
-      &-img, &-copy
-        padding: 32px 16px
-
-        +breakpoint( nth( $scale, 5 ) + 1 )
-          float: left
-          padding:
-            top: 10%
-            bottom: 10%
-      &-img
-        padding-bottom: 0
-
-        +breakpoint( nth( $scale, 5 ) + 1 )
-          padding-bottom: 10%
-          width: susy-span( 7 of 12 )
-
-      &-copy
-        padding-top: 0
-
-        +breakpoint( nth( $scale, 5 ) + 1 )
-          padding-top: 10%
-          width: susy-span( 5 of 12 )
 
     .project-files
       padding: 0 16px

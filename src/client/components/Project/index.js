@@ -37,7 +37,7 @@ export default class Project extends React.Component {
   }
 
   render() {
-    const { body, description, files, id, tags, title, viewMode } = this.state;
+    const { body, description, files, id, landing_page, tags, title, viewMode } = this.state;
     switch( true ) {
       case /^list$/gi.test( viewMode ):
         return (<li><div className="project">
@@ -53,46 +53,20 @@ export default class Project extends React.Component {
             <h1 className="h1 page-title">{ title }</h1>
             { description && <p className="project-description">{ description }</p> }
             { tags && <ul className="list-inline list-tags">{ tags.map( ( term, index )=> <Tag key={ 'key.react.term.' + term.id + '.' + index } { ...term } /> ) }</ul>}
+            { landing_page && files &&
+              <footer className="project-files">
+                <h2 className="h6">Project Files</h2>
+                <ul className="list-unstyled list-files">{ files.map( ( file, index )=> <File key={ 'key.react.file.' + file.id + '.' + index } { ...file } /> ) }</ul>
+              </footer>
+            }
           </div></header>
           { body && <section className="project-body" dangerouslySetInnerHTML={{ __html: body }} />}
-          <div className="three-up-icon-txt">
-            <div className="icon-txt">
-              <div className="icon"><span className="fa fa-area-chart"></span></div>
-              <div className="txt"><h4>Lorem Ipsum</h4><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
-            </div>
-            <div className="icon-txt">
-              <div className="icon"><span className="fa fa-area-chart"></span></div>
-              <div className="txt"><h4>Lorem Ipsum</h4><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
-            </div>
-            <div className="icon-txt">
-              <div className="icon"><span className="fa fa-area-chart"></span></div>
-              <div className="txt"><h4>Lorem Ipsum</h4><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
-            </div>
-            <div className="icon-txt">
-              <div className="icon"><span className="fa fa-area-chart"></span></div>
-              <div className="txt"><h4>Lorem Ipsum</h4><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
-            </div>
-            <div className="icon-txt">
-              <div className="icon"><span className="fa fa-area-chart"></span></div>
-              <div className="txt"><h4>Lorem Ipsum</h4><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
-            </div>
-            <div className="icon-txt">
-              <div className="icon"><span className="fa fa-area-chart"></span></div>
-              <div className="txt"><h4>Lorem Ipsum</h4><p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p></div>
-            </div>
-          </div>
-          <div className="split-image-txt"><div className="wrapper">
-            <div className="split-image-txt-img">
-              <h3>Lorem Pixel</h3>
-            </div>
-            <div className="split-image-txt-copy">
-              <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
-            </div>
-          </div></div>
-          <footer className="project-files">
-            { files && <h2>Project Files</h2> }
-            { files && <ul className="list-unstyled list-files">{ files.map( ( file, index )=> <File key={ 'key.react.file.' + file.id + '.' + index } { ...file } /> ) }</ul>}
-          </footer>
+          { !landing_page && files &&
+            <footer className="project-files">
+              <h2 className="h6">Project Files</h2>
+              <ul className="list-unstyled list-files">{ files.map( ( file, index )=> <File key={ 'key.react.file.' + file.id + '.' + index } { ...file } /> ) }</ul>
+            </footer>
+          }
         </article>);
         break;
     }

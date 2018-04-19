@@ -7,28 +7,11 @@
   > h1:first-child
     @extend .sr-only
 
-.three-up-icon-txt
-  +container
-  padding: 0 16px
+.project-card-sort .project-header
 
-  .icon-txt
-    text-align: center
-
-    .fa
-      font-size: emify( $font-size-base * 2 )
-
-    +breakpoint( nth( $scale, 5 ) + 1 )
-      float: left
-      width: susy-span( 4 of 12 )
-      padding: 0 gutter( of 12 ) / 2
-
-      .fa
-        font-size: emify( $font-size-base * 4 )
-
-    .icon
-      margin: 16px 0
-
-    .txt
-
-      p
-        font-size: emify( $font-size-small )
+  +breakpoint( nth( $scale, 5 ) + 1 )
+    background:
+      image: url( '/static/project_img/project-card-sort-hero.jpg' )
+      position: center
+      repeat: no-repeat
+      size: 100% auto
