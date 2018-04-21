@@ -60,7 +60,7 @@ export default class Project extends React.Component {
               </div>
             }
           </div></header>
-          { body && <section className="project-body" dangerouslySetInnerHTML={{ __html: body }} />}
+          { body && <div className="project-body" dangerouslySetInnerHTML={{ __html: body }} />}
           { !landing_page && files &&
             <footer className="project-files">
               <h2 className="h6">Project Files</h2>
