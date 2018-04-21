@@ -54,10 +54,10 @@ export default class Project extends React.Component {
             { description && <p className="project-description">{ description }</p> }
             { tags && <ul className="list-inline list-tags">{ tags.map( ( term, index )=> <Tag key={ 'key.react.term.' + term.id + '.' + index } { ...term } /> ) }</ul>}
             { landing_page && files &&
-              <footer className="project-files">
+              <div className="project-files">
                 <h2 className="h6">Project Files</h2>
                 <ul className="list-unstyled list-files">{ files.map( ( file, index )=> <File key={ 'key.react.file.' + file.id + '.' + index } { ...file } /> ) }</ul>
-              </footer>
+              </div>
             }
           </div></header>
           { body && <section className="project-body" dangerouslySetInnerHTML={{ __html: body }} />}
