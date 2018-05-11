@@ -5,6 +5,7 @@
   "main": "./build/server/index.js",
   "scripts": {
     "postinstall": "npm run build",
+    "dev": "nf run npm run dev:start",
     "django": "./backend/manage.py runserver",
     "watch:src": "babel ./src -d build --watch",
     "server:dev": "nodemon --exec babel-node ./build/server/index.js",
@@ -13,8 +14,8 @@
     "build": "export NODE_ENV=production && npm run sass && npm run postcss && npm run babel",
     "postcss": "postcss backend/assets/css/stylesheet.css --verbose --env production --replace",
     "sass": "node-sass src/client/sass/stylesheet.sass -r --precision=8 --include-path=node_modules/ -o backend/assets/css/",
+    "dev:start": "parallelshell 'npm run watch:sass' 'npm run watch:webpack' 'npm run watch:src' 'npm run server:dev' 'npm run django'",
     "watch:sass": "node-sass src/client/sass/stylesheet.sass --watch --recursive --precision=8 --include-path=node_modules/ -o backend/assets/css/",
-    "dev": "source .env && npm run sass && parallelshell 'npm run watch:sass' 'npm run watch:webpack' 'npm run watch:src' 'npm run server:dev' 'npm run django'",
     "start": "parallelshell 'env PYTHONPATH=$PYTHONPATH:$PWD/backend gunicorn backend.wsgi:application --bind $DJANGO_HOST:$DJANGO_PORT' 'babel-node --optimize_for_size --max_old_space_size=920 --gc_interval=100 --expose-gc ./build/server/index.js'"
   },
   "engines": {
@@ -85,13 +86,14 @@
     "underscore": "1.8.3"
   },
   "devDependencies": {
+    "Bitters": "https://github.com/thoughtbot/bitters/archive/v1.8.0.tar.gz",
     "animate-sass": "0.8.2",
     "autoprefixer": "8.2.0",
     "bourbon": "5.0.0",
-    "bourbon-bitters": "1.2.1",
     "breakpoint-sass": "2.7.1",
     "css-reset-and-normalize-sass": "0.1.2",
     "cssnano": "3.10.0",
+    "foreman": "2.0.0",
     "node-sass": "4.8.3",
     "nodemon": "1.17.2",
     "postcss": "6.0.21",
