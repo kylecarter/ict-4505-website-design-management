@@ -230,3 +230,4 @@ NOTES.md
 backend/assets/*
 !backend/assets/.staticfilesrc
 build/
+.idea/*
