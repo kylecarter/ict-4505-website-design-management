@@ -23,7 +23,8 @@ export default class Navigation extends React.Component {
 
   render() {
     const { activeID, expose, navigation } = this.state;
-    return (<nav id="navigation" className={ expose ? 'navigation nav-open' : 'navigation' } onClick={ this.toggle }>
+    return (<nav id="navigation" className={ expose ? 'navigation nav-open' : 'navigation' }>
+      <a href="/" className="lnk lnk-toggle-nav" onClick={ this.toggle }><span className="ico ico-navicon"><span className="sr-only">Expose Menu</span></span></a>
       <ul className="list-unstyled list-menu">
         <li className="menu-home"><a href="/" rel="bookmark">Home</a></li>
         { navigation.map( ( data, index )=> <NavItem key={ 'react.nav.' + data.id + '.' + index } activeID={ activeID } data={ data } /> ) }
@@ -32,8 +33,8 @@ export default class Navigation extends React.Component {
   }
 
   toggle( e ) {
-    if ( window.innerWidth > 991 || /^a$/i.test( e.target.nodeName ) ) return this;
-    e.stopPropagation();
+    if ( window.innerWidth > 991 ) return this;
+    e.preventDefault();
     this.setState({
       expose: !this.state.expose
     });

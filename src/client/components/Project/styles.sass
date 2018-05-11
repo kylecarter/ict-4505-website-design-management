@@ -5,17 +5,20 @@
   +breakpoint( nth( $scale, 5 ) + 1 )
     flex-wrap: wrap
     display: flex
-    float: left
 
   > li
     margin: 0 0 16px
 
     +breakpoint( nth( $scale, 5 ) + 1 )
-      margin: 0 16px 16px 0
+      float: left
       width: susy-span( 6 of 12 )
+      padding: 0 ( gutter( 12 ) / 2 )
+
+      &:nth-child( odd )
+        padding-left: 0
 
       &:nth-child( even )
-        margin-right: 0
+        padding-right: 0
 
   .project
     border: thin solid $border-color

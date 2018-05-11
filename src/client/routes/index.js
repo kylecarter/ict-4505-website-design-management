@@ -11,7 +11,12 @@ import {
 } from 'react-router-dom'
 
 // Source > Client > Views
-import { FiveHundredErrors, FourOhFour, Home, Project } from '../views'
+import {
+  FiveHundredErrors,
+  FourOhFour,
+  Home,
+  Project
+} from '../views'
 
 // Source > Client > Components
 import Footer from '../components/Footer'

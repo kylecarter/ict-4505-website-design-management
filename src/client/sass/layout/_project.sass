@@ -1,4 +1,17 @@
 .model-project
 
+  .project
+    min-height: 100vh
+    padding-bottom: 5%
+
   > h1:first-child
     @extend .sr-only
+
+.project-card-sort .project-header
+
+  +breakpoint( nth( $scale, 5 ) + 1 )
+    background:
+      image: url( '/static/project_img/project-card-sort-hero.jpg' )
+      position: center
+      repeat: no-repeat
+      size: 100% auto

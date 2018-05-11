@@ -1,0 +1,38 @@
+.three-up-icon-txt
+  +container
+  padding: 0 16px
+  text-align: center
+
+  .icon-txt
+    margin: 16px 0
+
+    .fa
+      font-size: emify( $font-size-base * 2 )
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+      display: inline-block
+      width: susy-span( 4 of 12 )
+      padding: 0 gutter( of 12 ) / 2
+
+      .fa
+        font-size: emify( $font-size-base * 4 )
+
+    .txt
+      margin-top: 16px
+
+      p
+        font-size: emify( $font-size-small )
+
+.faux-columns
+  +clearfix
+
+  +breakpoint( nth( $scale, 5 ) + 1 )
+    display: flex
+    flex-wrap: wrap
+
+  &.columns-3 > .col
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+      float: left
+      width: susy-span( 4 of 12 )
+      padding: 0 gutter( of 12 ) / 2

@@ -14,7 +14,7 @@ class Tag extends React.Component {
 
   render () {
     const { term } = this.state;
-    return (<li className={ 'lang-' + term.toLowerCase() }>{ term }</li>);
+    return (<li className=" 'lang-' + term.toLowerCase() ">{ term }</li>);
   }
 }
 
@@ -37,7 +37,7 @@ export default class Project extends React.Component {
   }
 
   render() {
-    const { body, description, files, id, tags, title, viewMode } = this.state;
+    const { body, description, files, id, landing_page, tags, title, viewMode } = this.state;
     switch( true ) {
       case /^list$/gi.test( viewMode ):
         return (<li><div className="project">
@@ -49,16 +49,24 @@ export default class Project extends React.Component {
         break;
       default:
         return (<article className="project">
-          <header className="project-header">
+          <header className="project-header"><div className="wrapper">
             <h1 className="h1 page-title">{ title }</h1>
             { description && <p className="project-description">{ description }</p> }
             { tags && <ul className="list-inline list-tags">{ tags.map( ( term, index )=> <Tag key={ 'key.react.term.' + term.id + '.' + index } { ...term } /> ) }</ul>}
-          </header>
-          { body && <section className="project-body" dangerouslySetInnerHTML={{ __html: body }} />}
-          <section className="project-files">
-            { files && <h2>Project Files</h2> }
-            { files && <ul className="list-unstyled list-files">{ files.map( ( file, index )=> <File key={ 'key.react.file.' + file.id + '.' + index } { ...file } /> ) }</ul>}
-          </section>
+            { landing_page && files &&
+              <div className="project-files">
+                <h2 className="h6">Project Files</h2>
+                <ul className="list-unstyled list-files">{ files.map( ( file, index )=> <File key={ 'key.react.file.' + file.id + '.' + index } { ...file } /> ) }</ul>
+              </div>
+            }
+          </div></header>
+          { body && <div className="project-body" dangerouslySetInnerHTML={{ __html: body }} />}
+          { !landing_page && files &&
+            <footer className="project-files">
+              <h2 className="h6">Project Files</h2>
+              <ul className="list-unstyled list-files">{ files.map( ( file, index )=> <File key={ 'key.react.file.' + file.id + '.' + index } { ...file } /> ) }</ul>
+            </footer>
+          }
         </article>);
         break;
     }
