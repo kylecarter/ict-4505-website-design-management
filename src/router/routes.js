@@ -2,5 +2,6 @@
 
 export default [
   '/',
-  '/project/:id'
+  '/project/:id',
+  '/restaurant/styleguide'
 ]

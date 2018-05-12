@@ -131,6 +131,7 @@ STATICFILES_DIRS = [
 
 # Additional Installed Apps
 INSTALLED_APPS = [
+    'restaurant.apps.RestaurantConfig',
     'projects.apps.ProjectsConfig',
     'api.apps.ApiConfig',
 ] + INSTALLED_APPS

@@ -1,0 +1,50 @@
+%restaurant-styleguide--section
+  margin: 42px auto
+
+.restaurant-styleguide
+
+  &--section
+    @extend %restaurant-styleguide--section
+
+  $sections: swatches headings copy forms nav marquees footer menu
+
+  @each $section in $sections
+    &--section__#{ $section }
+      @extend %restaurant-styleguide--section
+
+  &--section
+
+    &__headings
+
+      .wrapper
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+
+        @for $x from 1 through 6
+          h#{ $x }, .h#{ $x }
+            margin: 0 0 16px
+            display: inline-block
+            vertical-align: middle
+            width: susy-span( 1 of 12 )
+
+.list-swatches
+  +clearfix
+  margin-left: -14px
+  margin-right: -14px
+  @extend .list-inline
+
+  > .swatch
+    margin: 0 14px
+    border: thin solid $border-color
+    +size( susy-span( 3 of 12 ), 60px )
+    border-radius: $border-radius-small - 3
+
+  .primary
+    background-color: $restaurant-primary
+
+  .text-color
+    background-color: $restaurant-text-color
+
+  .white
+    background-color: $white

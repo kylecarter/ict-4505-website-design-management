@@ -1,29 +1,36 @@
-.form-checkbox
-  +position( relative, null null null null )
+input[type="checkbox"]
+  +position( absolute, 0 null null 0 )
+  text-indent: 1000em
+  overflow: hidden
+  z-index: -1
+  +size( 0 )
 
-  input[type="checkbox"]
-    +position( absolute, 0 null null 0 )
-    text-indent: 1000em
-    overflow: hidden
-    z-index: -1
-    +size( 0 )
+  + label
+    display: inline-block
+    vertical-align: middle
 
-    + label
-      font-weight: 400
+    &:before
+      +position( relative, null null null null )
+      border-radius: $border-radius-small - 3
+      transition: all 0.15s ease-in-out
+      border: thin solid $border-color
+      background-color: $white
+      vertical-align: middle
+      display: inline-block
+      margin: 0 11px 0 0
+      +size( 20px )
+      content: ''
+      z-index: 1
 
-      &:before
-        +position( relative, null null null null )
-        transition: all 0.15s ease-in-out
-        border: thin solid $border-color
-        background-color: $white
-        vertical-align: middle
-        display: inline-block
-        border-radius: 5px
-        margin: 0 11px 0 0
-        +size( 26px )
-        content: ''
-        z-index: 1
+  &:checked + label:before,
+  &[checked] + label:before
+    border-color: lighten( $primary, 10% )
+    background-color: lighten( $primary, 10% )
 
-    &:checked + label:before
-      border-color: $primary
-      border-width: 8px
+  &:checked + label:after,
+  &[checked] + label:after
+    +position( absolute, null null 5px 3px )
+    font: font-awesome( 1.5em )
+    color: $text-color
+    content: '\f00c'
+    z-index: 2

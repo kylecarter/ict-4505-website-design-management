@@ -43,6 +43,11 @@ export default ( req, res )=> {
       classList = [ 'model-project' ];
       api = DJANGO + '/api/v1/project/' + MATCH.params.id;
       break;
+    case MATCH && MATCH.url && /restaurant\/styleguide/.test( MATCH.url ):
+      title = 'Restaurant Styleguide';
+      classList = [ 'restaurant' ];
+      api = null
+      break;
     default:
       classList = [ 'four-oh-four' ];
       title = "Page Not Found";

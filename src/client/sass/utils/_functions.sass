@@ -10,8 +10,8 @@
 
   @return unquote(($size / $base) + $measure)
 
-@function font-awesome($size: 1em)
-  @return normal normal normal #{$size}/1 'FontAwesome'
+@function font-awesome($size: 1em, $library: 'Font Awesome\\ 5 Free')
+  @return 700 normal normal #{ $size }/1 #{ $library }
 
 @function headings-font-family( $face: 'Book', $isitalic: false )
   @if $isitalic

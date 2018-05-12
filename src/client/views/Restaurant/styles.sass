@@ -1,0 +1,23 @@
+$restaurant-primary: #5a76c0
+$restaurant-text-color: #26252b
+$restaurant-headings-font-famiy: 'Roboto Condensed', $font-stack-helvetica
+
+.restaurant
+  color: $restaurant-text-color
+
+  @for $x from 1 through 6
+    h#{ $x }, .h#{ $x }
+      font-family: $restaurant-headings-font-famiy
+      font-weight: 700
+
+  input[type="checkbox"]
+
+    &:checked + label::before
+      background-color: lighten( $restaurant-primary, 10% )
+      border-color: lighten( $restaurant-primary, 10% )
+
+  input[type="radio"]
+
+    &:checked + label::before
+      border-color: $restaurant-primary
+      color: $restaurant-primary
