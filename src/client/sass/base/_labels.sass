@@ -1,6 +1,11 @@
 label
   font-weight: 400
 
+  &:hover, &:focus, &:active
+    box-shadow: none
+    outline: 0
+    border: 0
+
   &.required::after
     color: $red
     content: '*'

@@ -1,9 +1,34 @@
 $restaurant-primary: #5a76c0
 $restaurant-text-color: #26252b
+$restaurant-input-border-focus: $restaurant-primary
 $restaurant-headings-font-famiy: 'Roboto Condensed', $font-stack-helvetica
 
 .restaurant
   color: $restaurant-text-color
+
+  .btn
+    text-transform: uppercase
+    font-family: $restaurant-headings-font-famiy
+
+  .btn-default
+    color: $text-color
+    background-color: $white
+    border-color: $text-color
+
+    &:hover, &:focus, &:active
+      color: $white
+      border-color: $restaurant-primary
+      background-color: $restaurant-primary
+
+  .btn-primary
+    color: $white
+    border-color: $restaurant-primary
+    background-color: $restaurant-primary
+
+    &:hover, &:focus, &:active
+      color: $text-color
+      background-color: $white
+      border-color: $text-color
 
   @for $x from 1 through 6
     h#{ $x }, .h#{ $x }
@@ -13,11 +38,75 @@ $restaurant-headings-font-famiy: 'Roboto Condensed', $font-stack-helvetica
   input[type="checkbox"]
 
     &:checked + label::before
-      background-color: lighten( $restaurant-primary, 10% )
-      border-color: lighten( $restaurant-primary, 10% )
+      background-color: $restaurant-primary
+      border-color: $restaurant-primary
 
   input[type="radio"]
 
     &:checked + label::before
       border-color: $restaurant-primary
       color: $restaurant-primary
+
+  textarea
+
+    &:active, &:focus
+      border-color: $restaurant-input-border-focus
+      box-shadow: inset 0 1px 3px rgba( $black, 0.06 ), 0 0 5px rgba( $restaurant-input-border-focus, 0.7 )
+
+  @each $field in $text-fields
+
+    input[type="#{$field}"]
+
+      &:active, &:focus
+        border-color: $restaurant-input-border-focus
+        box-shadow: inset 0 1px 3px rgba( $black, 0.06 ), 0 0 5px rgba( $restaurant-input-border-focus, 0.7 )
+
+  select
+
+    &:active, &:focus
+
+      + .faux-select
+        border-color: $restaurant-input-border-focus
+        box-shadow: inset 0 1px 3px rgba( $black, 0.06 ), 0 0 5px rgba( $restaurant-input-border-focus, 0.7 )
+
+  .footer
+
+    &-top .form-inline
+
+      .form-textfield
+        margin-right: 9px
+        margin-bottom: 0
+
+        label
+          @extend .h4
+
+    &-top
+
+      .form-inline, .social
+
+        +breakpoint( nth( $scale, 5 ) + 1 )
+          float: left
+          width: susy-span( 6 of 12 )
+
+    .social
+
+      h4
+        display: block
+
+      a
+        text-decoration: none
+        display: inline-block
+        padding: 0 16px
+        color: $white
+
+        &:first-of-type
+          padding-left: 0
+
+    &-disclaimer, &-awards
+
+      +breakpoint( nth( $scale, 5 ) + 1 )
+        float: left
+        width: susy-span( 6 of 12 )
+
+    &-awards > img
+      max-height: 60px

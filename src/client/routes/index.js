@@ -36,7 +36,7 @@ export default class Routes extends React.Component {
       <div className="react-app"><Switch>
         <Route path="/" exact render={ ()=> (<Home projects={ this.state.projects || [] } />) } />
         <Route path="/project/:id" exact render={ ()=> (<Project project={ this.state.project || null } navigation={ this.state.navigation } />) } />
-        <Route path="/restaurant/styleguide" exact render={ ()=> (<Restaurant.Styleguide />) } />
+        <Route path="/restaurant/styleguide" exact render={ ()=> (<Restaurant.Styleguide navigation={ this.state.navigation } />) } />
         <Route render={ ()=> <FourOhFour projects={ this.state.projects || [] } /> } />
       </Switch></div>
       <Footer />

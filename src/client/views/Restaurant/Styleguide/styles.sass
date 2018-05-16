@@ -1,6 +1,9 @@
 %restaurant-styleguide--section
   margin: 42px auto
 
+  &:first-child
+    margin-top: 0
+
 .restaurant-styleguide
 
   &--section
@@ -26,7 +29,10 @@
             margin: 0 0 16px
             display: inline-block
             vertical-align: middle
-            width: susy-span( 1 of 12 )
+            width: susy-span( 3 of 12 )
+
+            +breakpoint( nth( $scale, 5 ) + 1 )
+              width: susy-span( 1 of 12 )
 
 .list-swatches
   +clearfix

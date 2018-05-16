@@ -1,0 +1,136 @@
+.nav
+
+  .wrapper
+    +container
+
+  &-top, &-bottom
+
+    .lnk
+      color: $white
+      text-decoration: none
+      border-bottom: 2px solid transparent
+
+      &:hover, &:focus, &:active, &.active
+        color: $white
+        border-bottom-color: $restaurant-primary
+
+  &-top
+    background-color: $restaurant-primary
+    font-size: emify( $font-size-small )
+    padding: 10px 0
+    +clearfix
+
+    ul > li
+      width: susy-span( 6 of 12 )
+      float: left
+
+      + li
+        float: right
+        text-align: right
+
+      &.locations, &.hours
+
+        > a > span
+
+          +breakpoint( max-width nth( $scale, 5 ) )
+            +size( 0 )
+            display: block
+            overflow: hidden
+            text-indent: 1000em
+            +position( absolute, null null null null )
+
+        > a:before
+          margin-right: 9px
+          font: font-awesome()
+          display: inline-block
+
+      &.locations > a:before
+        content: '\f279'
+
+      &.hours > a:before
+        content: '\f017'
+
+  &-bottom
+    background-color: $text-color
+
+    .logo
+      background-image: url( '/static/restaurant-imgs/logo2017.jpg')
+      +size( 46px, 30px )
+      margin: 10px 0
+      float: left
+
+      +breakpoint( nth( $scale, 5 ) + 1 )
+        margin: 16px 0
+
+
+    .lnk-toggle-nav
+      width: susy-span( 6 of 12 )
+      text-align: right
+      padding: 10px 0
+      float: right
+
+      &:hover, &:focus, &:active, &.active
+        outline: 0
+        border: 0
+
+      &:before, &:after
+        display: none
+
+      .nav-open &
+        padding: 0
+        +size( auto )
+        +position( fixed, 10px 10px null null )
+        text-shadow: 0 1px 3px rgba( $text-color, 0.6 )
+
+      .ico-navicon
+        font: font-awesome( 1.5em )
+        background: transparent
+        +size( auto )
+
+        .nav-open &
+          position: static
+          text-indent: 0
+
+        &:before
+          content: '\f0c9'
+
+          .nav-open &
+            content: '\f00d'
+
+    .list-nav
+      text-align: right
+      justify-content: flex-end
+
+      +breakpoint( max-width nth( $scale, 5 ) )
+        padding: 10px
+        display: block
+        text-align: center
+        background-color: $restaurant-primary
+        background-color: rgba( $restaurant-primary, 0.9 )
+
+        > li
+          padding: 10px 0
+
+          > a
+            font-size: emify( 18px )
+            font-weight: $font-weight-700
+            text-shadow: 0 1px 3px rgba( $text-color, 0.6 )
+
+      a
+        padding-bottom: 3px
+
+        &:hover, &:focus, &:active, &.active
+          outline: 0
+
+      +breakpoint( max-width nth( $scale, 5 ) )
+        +position( fixed, -100% null null 0 )
+        transition: top 150ms ease
+        +size( 100% )
+
+        .nav-open &
+          top: 0
+
+      +breakpoint( nth( $scale, 5 ) + 1 )
+        width: susy-span( 10 of 12 )
+        padding: 18px 0
+        float: right

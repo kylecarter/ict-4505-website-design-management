@@ -18,19 +18,19 @@ input[type="checkbox"]
       vertical-align: middle
       display: inline-block
       margin: 0 11px 0 0
-      +size( 20px )
+      +size( 16px )
       content: ''
       z-index: 1
 
   &:checked + label:before,
   &[checked] + label:before
-    border-color: lighten( $primary, 10% )
-    background-color: lighten( $primary, 10% )
+    border-color: $primary
+    background-color: $primary
 
   &:checked + label:after,
   &[checked] + label:after
-    +position( absolute, null null 5px 3px )
-    font: font-awesome( 1.5em )
-    color: $text-color
+    +position( absolute, null null 8px 0 )
+    font: font-awesome()
     content: '\f00c'
+    color: $white
     z-index: 2

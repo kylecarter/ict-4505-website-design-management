@@ -44,9 +44,9 @@ export default ( req, res )=> {
       api = DJANGO + '/api/v1/project/' + MATCH.params.id;
       break;
     case MATCH && MATCH.url && /restaurant\/styleguide/.test( MATCH.url ):
+      api = DJANGO + '/api/v1/restaurant/pages/';
       title = 'Restaurant Styleguide';
       classList = [ 'restaurant' ];
-      api = null
       break;
     default:
       classList = [ 'four-oh-four' ];

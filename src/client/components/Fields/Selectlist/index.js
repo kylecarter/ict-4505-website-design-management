@@ -22,7 +22,7 @@ export default class SelectList extends React.Component {
   render() {
     const { id, options, required } = this.state;
     const i = this.default( this.props.options );
-    const x = this.default( options );
+    let x = this.default( options );
     return(<div className="form-row form-selectlist">
       <label htmlFor="example-selectlist" className={ required ? 'required' : '' }>Example Select</label>
       <select id={ id } className="form-control" defaultValue={ i > -1 ? options[ i ].value : '' } onChange={ this.toggle }>
@@ -36,11 +36,10 @@ export default class SelectList extends React.Component {
   toggle( e ) {
     const i = _.findIndex( this.props.options, { value: e.target.value } );
     let updates = this.state.options;
+    _.each( updates, e => e.selected = false );
     if ( i > -1 ) {
       updates[ i ].selected = true;
-      return this.setState({ options: updates });
     }
-    _.each( updates, ( e, i, l )=> e.selected = false );
     return this.setState({ options: updates });
   }
 
