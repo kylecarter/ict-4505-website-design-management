@@ -43,10 +43,39 @@ export default ( req, res )=> {
       classList = [ 'model-project' ];
       api = DJANGO + '/api/v1/project/' + MATCH.params.id;
       break;
-    case MATCH && MATCH.url && /restaurant\/styleguide/.test( MATCH.url ):
+    case MATCH && MATCH.url && /restaurant(\/\w+)*/.test( MATCH.url ):
       api = DJANGO + '/api/v1/restaurant/pages/';
-      title = 'Restaurant Styleguide';
-      classList = [ 'restaurant' ];
+      switch (MATCH.params.page ) {
+        case 'about':
+          title = 'About | ';
+          break;
+        case 'contact':
+          title = 'Contact | ';
+          break;
+        case 'catering':
+          title = 'Catering | ';
+          break;
+        case 'contact':
+          title = 'Contact | ';
+          break;
+        case 'menu':
+          title = 'Menu | ';
+          break;
+        case 'locations':
+          title = 'Locations | ';
+          break;
+        case 'specials':
+          title = 'Specials | ';
+          break;
+        case 'styleguide':
+          title = 'Styleguide | ';
+          break;
+        default:
+          title = '';
+          break;
+      }
+      title += 'the Veagan Nom';
+      classList = [ 'restaurant', MATCH.params.page ];
       break;
     default:
       classList = [ 'four-oh-four' ];

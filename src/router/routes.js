@@ -3,5 +3,6 @@
 export default [
   '/',
   '/project/:id',
-  '/restaurant/styleguide'
+  '/restaurant',
+  '/restaurant/:page'
 ]

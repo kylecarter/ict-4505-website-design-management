@@ -3,4 +3,4 @@
 import Textfield from './Textfield'
 import Selectlist from './Selectlist'
 
-export default { Selectlist, Textfield }
+export { Selectlist, Textfield }
