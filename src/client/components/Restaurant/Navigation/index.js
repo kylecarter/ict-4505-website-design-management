@@ -9,7 +9,7 @@ const window = window || {};
 
 const NavItem = ( props )=> {
   const { activeID, data } = props;
-  return <li><a className={ activeID === data.id ? 'active lnk lnk-nav' : 'lnk lnk-nav' } href={ '/restaurant/' + data.id } rel="bookmark">{ data.title }</a></li>;
+  return <li><a className={ activeID === data.slug ? 'active lnk lnk-nav' : 'lnk lnk-nav' } href={ '/restaurant/' + data.slug } rel="bookmark">{ data.title }</a></li>;
 }
 
 export default class Navigation extends React.Component {

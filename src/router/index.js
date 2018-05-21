@@ -44,8 +44,8 @@ export default ( req, res )=> {
       api = DJANGO + '/api/v1/project/' + MATCH.params.id;
       break;
     case MATCH && MATCH.url && /restaurant(\/\w+)*/.test( MATCH.url ):
-      api = DJANGO + '/api/v1/restaurant/pages/';
-      switch (MATCH.params.page ) {
+      api = DJANGO + '/api/v1/restaurant/page/' + MATCH.params.page;
+      switch ( MATCH.params.page ) {
         case 'about':
           title = 'About | ';
           break;
@@ -69,13 +69,14 @@ export default ( req, res )=> {
           break;
         case 'styleguide':
           title = 'Styleguide | ';
+          api = DJANGO + '/api/v1/restaurant/pages';
           break;
         default:
           title = '';
           break;
       }
       title += 'the Veagan Nom';
-      classList = [ 'restaurant', MATCH.params.page ];
+      classList = [ 'restaurant', 'restaurant-' + MATCH.params.page ];
       break;
     default:
       classList = [ 'four-oh-four' ];

@@ -3,8 +3,8 @@
     &-top .form-inline
 
         .form-textfield
-        margin-right: 9px
-        margin-bottom: 0
+            margin-right: 9px
+            margin-bottom: 0
 
         label
             @extend .h4
@@ -13,32 +13,32 @@
 
         .form-inline, .social
 
-        +breakpoint( nth( $scale, 5 ) + 1 )
-            float: left
-            width: susy-span( 6 of 12 )
+            +breakpoint( nth( $scale, 5 ) + 1 )
+                float: left
+                width: susy-span( 6 of 12 )
 
     .social
 
         h4
-        display: block
+         display: block
 
         a
-        text-decoration: none
-        display: inline-block
-        padding: 0 16px
-        color: $white
+            text-decoration: none
+            display: inline-block
+            padding: 0 16px
+            color: $white
 
-        &:first-of-type
-            padding-left: 0
+            &:first-of-type
+                padding-left: 0
 
-        &:hover, &:focus, &:active
-            color: $restaurant-primary
+            &:hover, &:focus, &:active
+                color: $restaurant-primary
 
     &-disclaimer, &-awards
 
         +breakpoint( nth( $scale, 5 ) + 1 )
-        float: left
-        width: susy-span( 6 of 12 )
+            float: left
+            width: susy-span( 6 of 12 )
 
     &-awards > img
         max-height: 60px
