@@ -63,6 +63,11 @@
         margin: 16px 0
 
 
+    .lnk
+      font-family: $restaurant-headings-font-famiy
+      text-transform: uppercase
+      font-size: 1.125em
+
     .lnk-toggle-nav
       width: susy-span( 6 of 12 )
       text-align: right
@@ -126,6 +131,7 @@
       +breakpoint( max-width nth( $scale, 5 ) )
         +position( fixed, -100% null null 0 )
         transition: top 150ms ease
+        z-index: 10001
         +size( 100% )
 
         .nav-open &

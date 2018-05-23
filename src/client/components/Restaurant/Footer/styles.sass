@@ -5,6 +5,11 @@
         .form-textfield
             margin-right: 9px
             margin-bottom: 0
+        
+        input[type="submit"]
+            padding-top: 0.6em
+            margin-top: -0.25em
+            padding-bottom: 0.6em
 
         label
             @extend .h4
@@ -18,6 +23,10 @@
                 width: susy-span( 6 of 12 )
 
     .social
+        margin-top: 1em
+
+        +breakpoint( nth( $scale, 5 ) + 1 )
+            margin-top: 0
 
         h4
          display: block

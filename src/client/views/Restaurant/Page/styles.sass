@@ -13,21 +13,24 @@
 
 .columns-2
     @extend %columns
-    display: flex
 
-    .row
-        margin-left: -( susy-gutter( of 12 ) / 2 )
-        margin-right: -( susy-gutter( of 12 ) / 2 )
 
-    .col-content
-        float: left
-        width: susy-span( 8 of 12 )
-        padding: 0 ( susy-gutter( of 12 ) / 2 )
+    +breakpoint( nth( $scale, 5 ) + 1 )
+        display: flex
 
-    .col-sidebar
-        float: left
-        width: susy-span( 4 of 12 )
-        padding: 0 ( susy-gutter( of 12 ) / 2 )
+        .row
+            margin-left: -( susy-gutter( of 12 ) / 2 )
+            margin-right: -( susy-gutter( of 12 ) / 2 )
+
+        .col-content
+            float: left
+            width: susy-span( 8 of 12 )
+            padding: 0 ( susy-gutter( of 12 ) / 2 )
+
+        .col-sidebar
+            float: left
+            width: susy-span( 4 of 12 )
+            padding: 0 ( susy-gutter( of 12 ) / 2 )
 
 .img-placeholder
     +size( 100%, 250px )
