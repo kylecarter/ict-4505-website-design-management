@@ -76,7 +76,7 @@ export default ( req, res )=> {
           break;
       }
       title += 'the Veagan Nom';
-      classList = [ 'restaurant', 'restaurant-' + MATCH.params.page ];
+      classList = [ 'restaurant', 'restaurant-' + ( MATCH.params.page ? MATCH.params.page : 'front' ) ];
       break;
     default:
       classList = [ 'four-oh-four' ];

@@ -33,6 +33,7 @@ export default class Navigation extends React.Component {
       <div className="nav-bottom"><div className="wrapper">
         <a href="/restaurant" className="logo logo-default"><span className="sr-only">The Vegan Nom</span></a>
         <ul className="list-unstyled list-nav">
+          <NavItem activeID={ activeID } data={{ slug: 'menu', title: 'Menu' }} />
           { navigation.map( ( data, index )=> <NavItem key={ 'react.nav.' + data.id + '.' + index } activeID={ activeID } data={ data } /> ) }
         </ul>
         <a href="/restaurant" className="lnk lnk-toggle-nav" onClick={ this.toggle }><span className="ico ico-navicon"><span className="sr-only">Expose Menu</span></span></a>

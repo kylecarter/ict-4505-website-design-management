@@ -1,0 +1,11 @@
+.modal
+    +position( fixed, 0 null null 0 )
+    z-index: 10002
+    +size( 100% )
+
+    &:after
+        background-color: rgba( $black, 0.6 )
+        +position( fixed, 0 null null 0 )
+        +size( 100% )
+        z-index: -1
+        content: ''

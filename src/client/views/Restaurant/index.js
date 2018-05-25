@@ -2,5 +2,7 @@
 
 import Styleguide from './Styleguide'
 import Page from './Page'
+import Home from './Home'
+import Menu from './Menu'
 
-export default { Page, Styleguide }
+export default { Home, Menu, Page, Styleguide }

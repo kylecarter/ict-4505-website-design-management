@@ -36,6 +36,17 @@ ol
     > li
       display: inline-block
       padding: 0 5px
+  
+  &-menu
+    @extend .list-unstyled
+
+    > li
+
+      > .list-unstyled
+        display: none
+
+      &.expanded > .list-unstyled
+        display: block
 
   &-nav
     @extend .list-unstyled

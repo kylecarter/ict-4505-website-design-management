@@ -1,5 +1,6 @@
 .scroll-to
   width: 100%
+  display: none
   text-decoration: none
   text-transform: uppercase
   font-size: emify( $font-size-large )
@@ -15,3 +16,6 @@
 
   .marquee--jumbo &
     color: $white
+
+  +breakpoint( nth( $scale, 5 ) + 1 )
+    display: block

@@ -1,0 +1,22 @@
+.divider-img
+    margin: 15px 0
+    padding: 30% 0
+    background:
+        size: cover
+        color: #f1f1f1
+        position: center
+        repeat: no-repeat
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+        padding: 15% 0
+    
+    .restaurant-front &--one
+        background-image: url( '/static/restaurant-imgs/home-divider-1.jpg' )
+    
+    .restaurant-front &--two
+        background-image: url( '/static/restaurant-imgs/home-divider-2.jpg' )
+
+.content-body
+
+    .restaurant-front &
+        margin: 0

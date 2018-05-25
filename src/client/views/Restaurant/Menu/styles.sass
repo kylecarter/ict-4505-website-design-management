@@ -1,0 +1,78 @@
+.page-menu .content-body .container
+    
+    +breakpoint( nth( $scale, 5 ) + 1 )
+        display: flex
+
+.menu
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+        float: left
+        width: susy-span( 3 of 12 )
+        flex-basis: susy-span( 3 of 12 )
+
+    .list-menu
+        border-radius: $border-radius-small - 3
+        border: thin solid $border-color
+
+        .h4
+            margin: 0
+
+        > li
+            background-color: $matte-bg
+            
+            > .list-unstyled 
+
+                    a
+                        padding: 8px 16px 8px
+                        display: block
+
+    a
+        color: $text-color
+        text-decoration: none
+
+        &:hover, &:active, &:focus
+            box-shadow: none
+            outline: none
+            border-color: transparent
+
+    a[href^="#menu-group"]
+        display: block
+        padding: 8px 16px
+        border-bottom: thin solid $border-color
+        +position( relative, null null null null )
+
+        &:after
+            +position( absolute, 50% 16px null null )
+            transition: transform 150ms ease
+            transform: translateY( -50% )
+            font: font-awesome()
+            content: '\f054'
+
+    .expanded a[href^="#menu-group"]:after
+        transform: translateY( -50% ) rotate( 90deg )
+
+    &-item
+
+        +breakpoint( nth( $scale, 5 ) + 1 )
+            float: left
+            padding: 0 32px
+            width: susy-span( 9 of 12 )
+            flex-basis: susy-span( 9 of 12 )
+
+        .upgrade
+            font-style: italic
+            font-size: emify( $font-size-small )
+
+        .img
+            position: relative
+
+            figcaption
+                font-size: 0.875em
+                color: $text-color
+                padding: 0.2em 0.5em
+                background-color: $white
+                +position( absolute, null null 10px 10px )
+                font-family: $restaurant-headings-font-famiy
+
+                p
+                    margin-bottom: 0

@@ -36,13 +36,13 @@ export default class Routes extends React.Component {
       <div className="react-app"><Switch>
         <Route path="/" exact render={ ()=> (<Home projects={ this.state.projects || [] } />) } />
         <Route path="/project/:id" exact render={ ()=> (<Project project={ this.state.project || null } navigation={ this.state.navigation } />) } />
-        <Route path="/restaurant/" exact render={() => (<Restaurant.Page page={ this.state.page || null } navigation={ this.state.navigation } />)} />
+        <Route path="/restaurant/" exact render={() => (<Restaurant.Home page={ this.state.page || null } navigation={ this.state.navigation } />)} />
         <Route path="/restaurant/about" exact render={() => (<Restaurant.Page page={ this.state.page || null } navigation={ this.state.navigation } />)} />
         <Route path="/restaurant/catering" exact render={() => (<Restaurant.Page page={ this.state.page || null } navigation={ this.state.navigation } />)} />
         <Route path="/restaurant/contact" exact render={() => (<Restaurant.Page page={ this.state.page || null } navigation={ this.state.navigation } />)} />
         <Route path="/restaurant/locations" exact render={() => (<Restaurant.Page page={ this.state.page || null } navigation={ this.state.navigation } />)} />
         <Route path="/restaurant/specials" exact render={() => (<Restaurant.Page page={ this.state.page || null } navigation={ this.state.navigation } />)} />
-        <Route path="/restaurant/menu" exact render={() => (<Restaurant.Page page={ this.state.page || null } navigation={ this.state.navigation } />)} />
+        <Route path="/restaurant/menu" exact render={() => (<Restaurant.Menu dish={ null } navigation={ this.state.navigation } />)} />
         <Route path="/restaurant/styleguide" exact render={ ()=> (<Restaurant.Styleguide navigation={ this.state.navigation } />) } />
         <Route render={ ()=> <FourOhFour projects={ this.state.projects || [] } /> } />
       </Switch></div>
