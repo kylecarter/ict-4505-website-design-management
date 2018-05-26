@@ -28,5 +28,21 @@
       position: relative
       background-color: $white
 
-      .btn + .btn
-        margin-left: 10px
+      .btn
+        width: 100%
+        display: block
+
+        &.fa-times
+          width: auto
+          display: inline-block
+
+        +breakpoint( nth( $scale, 5 ) + 1 )
+          width: auto
+          display: inline-block        
+
+        + .btn
+          margin: 21px 0 0
+
+          +breakpoint( nth( $scale, 5 ) + 1 )
+            margin: 0 0 0 10px
+
