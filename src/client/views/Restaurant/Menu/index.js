@@ -42,10 +42,12 @@ class OrderItem extends React.Component {
         let total = (()=> (price * qnty) + (upsale * qnty))();
         return(<li>
             <h4 className="h5">{ title }</h4>
-            <div className="form-row form-textfield"><input type="number" name={ 'qnty-' + id } onChange={ this.props.update } defaultValue={ qnty } /></div>
+            <div className="form-row form-textfield">
+                <input type="number" name={ 'qnty-' + id } onChange={ this.props.update } defaultValue={ qnty } />
+                <input type="hidden" name="index" value={ index } />
+            </div>
             <strong className="item-total">{ to_dollars( total ) }</strong>
             <button className="btn btn-plain fas fa-times" onClick={ this.props.delete } onTouchEnd={ this.props.delete } data-index={ index }><span className="sr-only">Remove from order</span></button>
-            <input type="hidden" name="index" value={ index } />
         </li>);
     }
 
@@ -59,7 +61,21 @@ class Order extends React.Component {
     }
 
     static getDerivedStateFromProps( props, state ) {
+        if ( props.bag ) {
+            sessionStorage.setItem( 'bag', JSON.stringify( props.bag ) );
+        } else {
+            sessionStorage.removeItem( 'bag' );            
+        }
         return _.extend( {}, props );
+    }
+
+    componentDidMount() {
+        let bag = sessionStorage.getItem( 'bag' );
+        if ( bag ) {
+            this.setState({
+                bag: JSON.parse( bag )
+            })
+        }
     }
 
     render() {
@@ -141,7 +157,9 @@ class Dish extends React.Component {
     }
 
     static getDerivedStateFromProps( props, state ) {
-        return _.extend( {}, props.dish );
+        return _.defaults( _.clone( props.dish ), {
+            upgrade: null
+        });
     }
 
     render() {
@@ -253,6 +271,29 @@ export default class Menu extends React.Component {
 
     update( e ) {
         e.preventDefault();
+        const self = this;
+        let bag = (()=> {
+            let arr = [];
+            _.each( self.state.bag, e => {
+                arr.push( e )
+            });
+            return arr;
+        })();
+
+        if ( parseInt( e.target.value ) === 0 ) {
+            bag.splice( parseInt( e.target.nextSibling.value ), 1 );
+            this.setState({
+                bag: bag.length > 0 ? bag : null,
+                showOrder: bag.length > 0 ? true : false
+            });
+        } else {
+            bag[ e.target.nextSibling.value ].qnty = parseInt( e.target.value );
+            this.setState({
+                bag: bag,
+            });
+    
+        }
+
         return this;
     }
 
@@ -266,15 +307,14 @@ export default class Menu extends React.Component {
             });
             return arr;
         })();
-        console.log( bag );
-        console.log( bag[parseInt( e.target.getAttribute( 'data-index' ))] );
+
         bag.splice( parseInt( e.target.getAttribute( 'data-index' ) ), 1 );
-        console.log( bag );
         this.setState({
             bag: bag.length > 0 ? bag : null,
             showOrder: bag.length > 0 ? true : false
         });
         return this;
+
     }
 
     expand( e ) {

@@ -14,13 +14,13 @@
     "build": "export NODE_ENV=production && npm run sass && npm run postcss && npm run babel",
     "postcss": "postcss backend/assets/css/stylesheet.css --verbose --env production --replace",
     "sass": "node-sass src/client/sass/stylesheet.sass -r --precision=8 --include-path=node_modules/ -o backend/assets/css/",
-    "dev:start": "parallelshell 'npm run watch:sass' 'npm run watch:webpack' 'npm run watch:src' 'npm run server:dev' 'npm run django'",
+    "dev:start": "concurrently 'npm run watch:sass' 'npm run watch:webpack' 'npm run watch:src' 'npm run server:dev' 'npm run django'",
     "watch:sass": "node-sass src/client/sass/stylesheet.sass --watch --recursive --precision=8 --include-path=node_modules/ -o backend/assets/css/",
-    "start": "parallelshell 'env PYTHONPATH=$PYTHONPATH:$PWD/backend gunicorn backend.wsgi:application --bind $DJANGO_HOST:$DJANGO_PORT' 'babel-node --optimize_for_size --max_old_space_size=920 --gc_interval=100 --expose-gc ./build/server/index.js'"
+    "start": "concurrently 'env PYTHONPATH=$PYTHONPATH:$PWD/backend gunicorn backend.wsgi:application --bind $DJANGO_HOST:$DJANGO_PORT' 'babel-node --optimize_for_size --max_old_space_size=920 --gc_interval=100 --expose-gc ./build/server/index.js'"
   },
   "engines": {
-    "node": "8.10.0",
-    "npm": "5.8.0"
+    "node": "10.2.1",
+    "npm": "6.1.0"
   },
   "browserslist": [
     "> 1%",
@@ -71,6 +71,7 @@
     "babel-preset-env": "1.6.1",
     "babel-preset-react": "6.24.1",
     "client-sessions": "0.8.0",
+    "concurrently": "3.5.1",
     "cookie-parser": "1.4.3",
     "cors": "2.8.4",
     "csurf": "1.9.0",
@@ -78,7 +79,6 @@
     "http-proxy": "1.16.2",
     "jquery": "3.3.1",
     "jquery-ui": "1.12.1",
-    "parallelshell": "3.0.2",
     "react": "16.4.0",
     "react-dom": "16.4.0",
     "react-router-dom": "4.2.2",
