@@ -76,3 +76,19 @@
 
                 p
                     margin-bottom: 0
+
+.page-menu
+
+    .fa-shopping-basket
+        box-shadow: 0 1px 3px rgba( $black, 0.3 )
+        +position( fixed, null 16px 16px null )
+        border-radius: 100%
+        +size( 50px )
+        padding: 0
+
+        +breakpoint( nth( $scale, 5 ) + 1 )
+            right: 50px
+            bottom: 50px
+
+        &:hover, &:focus, &:active
+            outline: 0

@@ -1,4 +1,32 @@
-.form-inline
+.form
 
-  > *
-    display: inline-block
+  &-inline
+
+    > *
+      display: inline-block
+
+  &-contact
+    box-shadow: 0 1px 3px rgba( $black, 0.13 )
+    border: thin solid rgba( $black, 0.13 )
+    font-size: emify( $font-size-small )
+    border-radius: $border-radius-base
+    padding: 10px
+  
+  &-addtocart, &-order
+    width: 100%
+    padding: 16px
+
+    .fa-times
+      +position( absolute, 0 0 null null )
+
+    .form-content
+      z-index: 1
+      width: 100%
+      padding: 16px
+      margin: 0 auto
+      max-width: 480px
+      position: relative
+      background-color: $white
+
+      .btn + .btn
+        margin-left: 10px

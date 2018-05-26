@@ -27,6 +27,82 @@ class ShowCart extends React.Component {
     }
 }
 
+class OrderItem extends React.Component {
+    constructor( props ) {
+        super( props );
+        this.state = _.extend( {}, this.props );
+    }
+
+    static getDerivedStateFromProps( props, state ) {
+        return _.extend( {}, props );
+    }
+
+    render() {
+        const { id, index, price, title, upsale, qnty } = this.state;
+        let total = (()=> (price * qnty) + (upsale * qnty))();
+        return(<li>
+            <h4 className="h5">{ title }</h4>
+            <div className="form-row form-textfield"><input type="number" name={ 'qnty-' + id } onChange={ this.props.update } defaultValue={ qnty } /></div>
+            <strong className="item-total">{ to_dollars( total ) }</strong>
+            <button className="btn btn-plain fas fa-times" onClick={ this.props.delete } onTouchEnd={ this.props.delete } data-index={ index }><span className="sr-only">Remove from order</span></button>
+            <input type="hidden" name="index" value={ index } />
+        </li>);
+    }
+
+}
+
+class Order extends React.Component {
+    constructor( props ) {
+        super( props );
+        this.state = _.extend( {}, this.props );
+        this.total = this.total.bind( this );
+    }
+
+    static getDerivedStateFromProps( props, state ) {
+        return _.extend( {}, props );
+    }
+
+    render() {
+        const self = this;
+        const { bag, menu } = this.state;
+        let amount = this.total( bag, menu );
+        return (<aside className="modal" role="dialog">
+            <form action="" className="modal-content form-order" onSubmit={ this.props.checkout }>
+                <div className="form-content">
+                    <button className="btn btn-plain fas fa-times" onClick={ this.props.dismiss } onTouchEnd={ this.props.dismiss }><span className="sr-only">Dismiss Shopping Basket</span></button>
+                    <h2 className="h4">Your Order</h2>
+                    <ul className="list-order">
+                        { bag.map( ( e, i )=> {
+                            const item = menu[ parseInt( e.item ) - 1 ];
+                            return <OrderItem key={ 'react.order.item.' + item.id } id={ item.id } index={ i } qnty={ parseInt( e.qnty ) } title={ item.title } price={ item.price } upsale={ item.upgrade && e.upgrade ? item.upgrade.cost : 0 } delete={ self.props.delete } update={ self.props.update } />
+                        }) }
+                    </ul>
+                    <p className="total text-right">Total: <strong>{ amount }</strong></p>
+                    <input type="button" value="Clear Bag" className="btn btn-default" onClick={ this.props.empty } onTouchEnd={ this.props.empty } />
+                    <input type="submit" value="Place Order" className="btn btn-primary" />
+                </div>
+            </form>
+        </aside>);
+    }
+
+    total( bag, menu ) {
+        let tally = 0;
+        _.each( bag, e => {
+            const item = menu[ parseInt( e.item ) - 1 ];
+            if ( item ) {
+                let upsale = 0;
+                if ( e.upgrade ) {
+                    upsale = item.upgrade ? item.upgrade.cost : 0;
+                }
+                let qnty = parseInt( e.qnty );
+                let price = item.price;
+                tally += ( price * qnty ) + ( upsale * qnty );
+            }
+        });
+        return to_dollars( tally );
+    }
+}
+
 class Form extends React.Component {
     constructor( props ) {
         super( props );
@@ -40,7 +116,7 @@ class Form extends React.Component {
     render() {
         const { alt, addon, desc, id, img, price, title, upgrade } = this.state;
         return (<aside className="modal" role="dialog">
-            <form action="" className="modal-content form-addtocart" role="document" onSubmit={ this.props.order }><div className="form-content">
+            <form action="" className="modal-content form-addtocart" role="form" onSubmit={ this.props.order }><div className="form-content">
                 <h4 className="h4">{ title } <strong className="price">{ to_dollars( price ) }</strong></h4>
                 <div className="form-row form-textfield">
                     <label htmlFor="qnty">Quanity</label>
@@ -90,8 +166,13 @@ export default class Menu extends React.Component {
     constructor( props ) {
         super( props );
         this.state = _.extend( {}, props );
+        this.checkout = this.checkout.bind( this );
+        this.dismiss = this.dismiss.bind( this );
         this.expand = this.expand.bind( this );
         this.cancel = this.cancel.bind( this );
+        this.delete = this.delete.bind( this );
+        this.update = this.update.bind( this );
+        this.empty = this.empty.bind( this );
         this.order = this.order.bind( this );
         this.show = this.show.bind( this );
         this.form = this.form.bind( this );
@@ -108,7 +189,7 @@ export default class Menu extends React.Component {
     }
 
     render() {
-        const { addToCart, bag, dish, menu } = this.state;
+        const { addToCart, bag, dish, menu, showOrder } = this.state;
         return (<div className={ [ 'page', 'page-menu' ].join( ' ' ) }>
             <Navigation navigation={ this.props.navigation } activeID={ 'menu' } />
             <main className="content" id="content">
@@ -153,11 +234,47 @@ export default class Menu extends React.Component {
                         </div>}
                     </section>
                 </div></section>
-                { addToCart && <Form dish={ dish } order={ this.order } cancel={ this.cancel } /> }
                 { bag && <ShowCart view={ this.view } /> }
+                { addToCart && <Form dish={ dish } order={ this.order } cancel={ this.cancel } /> }
+                { showOrder && <Order bag={ bag } menu={ menu } empty={ this.empty } delete={ this.delete } update={ this.update } dismiss={ this.dismiss } checkout={ this.checkout } /> }
             </main>
             <Footer />
         </div>);
+    }
+
+    empty( e ) {
+        e.preventDefault();
+        this.setState({
+            bag: null,
+            showOrder: false
+        });
+        return this;
+    }
+
+    update( e ) {
+        e.preventDefault();
+        return this;
+    }
+
+    delete( e ) {
+        e.preventDefault();
+        const self = this;
+        let bag = (()=> {
+            let arr = [];
+            _.each( self.state.bag, e => {
+                arr.push( e )
+            });
+            return arr;
+        })();
+        console.log( bag );
+        console.log( bag[parseInt( e.target.getAttribute( 'data-index' ))] );
+        bag.splice( parseInt( e.target.getAttribute( 'data-index' ) ), 1 );
+        console.log( bag );
+        this.setState({
+            bag: bag.length > 0 ? bag : null,
+            showOrder: bag.length > 0 ? true : false
+        });
+        return this;
     }
 
     expand( e ) {
@@ -211,7 +328,25 @@ export default class Menu extends React.Component {
 
     view( e ) {
         e.preventDefault();
-        console.log( this.state.bag );
+        this.setState({
+            showOrder: true
+        })
+        return this;
+    }
+
+    checkout( e ) {
+        e.preventDefault();
+        this.setState({
+            showOrder: false
+        });
+        return this;
+    }
+
+    dismiss( e ) {
+        e.preventDefault();
+        this.setState({
+            showOrder: false
+        });
         return this;
     }
 

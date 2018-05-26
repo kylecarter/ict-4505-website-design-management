@@ -47,6 +47,57 @@ ol
 
       &.expanded > .list-unstyled
         display: block
+  
+  &-order
+    @extend .list-unstyled
+    padding: 16px
+    margin: 0 0 16px
+    border-top: 3px solid $border-color
+    border-bottom: 3px solid $border-color
+
+    > li
+      display: table
+      display: flex
+      padding: 8px 0
+      align-items: center
+      border-bottom: thin solid $border-color
+
+      .h5
+        margin: 0
+        padding-right: 10px
+        width: susy-span( 5 of 12 )
+        flex-basis: susy-span( 5 of 12 )
+
+      .form-textfield
+        padding-right: 10px
+        width: susy-span( 2 of 12 )
+        flex-basis: susy-span( 2 of 12 )
+
+      .item-total
+        padding-right: 10px
+        width: susy-span( 3 of 12 )
+        flex-basis: susy-span( 3 of 12 )
+
+      .fa-times
+        top: auto
+        padding: 0
+        right: auto
+        position: static
+        width: susy-span( 2 of 12 )
+        flex-basis: susy-span( 2 of 12 )
+
+      > *
+        vertical-align: middle
+        display: table-cell
+
+      &:last-child
+        border-bottom-color: transparent
+
+    + .total
+      margin: 0 0 2em
+      padding: 16px 0
+      border-bottom: 3px solid $border-color
+
 
   &-nav
     @extend .list-unstyled
