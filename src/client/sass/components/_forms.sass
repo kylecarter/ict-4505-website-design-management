@@ -1,0 +1,48 @@
+.form
+
+  &-inline
+
+    > *
+      display: inline-block
+
+  &-contact
+    box-shadow: 0 1px 3px rgba( $black, 0.13 )
+    border: thin solid rgba( $black, 0.13 )
+    font-size: emify( $font-size-small )
+    border-radius: $border-radius-base
+    padding: 10px
+  
+  &-addtocart, &-order
+    width: 100%
+    padding: 16px
+
+    .fa-times
+      +position( absolute, 0 0 null null )
+
+    .form-content
+      z-index: 1
+      width: 100%
+      padding: 16px
+      margin: 0 auto
+      max-width: 480px
+      position: relative
+      background-color: $white
+
+      .btn
+        width: 100%
+        display: block
+
+        &.fa-times
+          width: auto
+          display: inline-block
+
+        +breakpoint( nth( $scale, 5 ) + 1 )
+          width: auto
+          display: inline-block        
+
+        + .btn
+          margin: 21px 0 0
+
+          +breakpoint( nth( $scale, 5 ) + 1 )
+            margin: 0 0 0 10px
+

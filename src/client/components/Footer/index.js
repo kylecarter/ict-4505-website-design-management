@@ -9,8 +9,8 @@ export default ()=> {
       <div className="footer-social">
         <h2 className="h4 text-uppercase">Connect with Kyle</h2>
         <ul className="list-inline">
-          <li><a href="https://github.com/kylecarter" className="fa fa-github lnk lnk-white" rel="bookmark"><span className="sr-only">Follow me on Github</span></a></li>
-          <li><a href="https://twitter.com/kyleacarter" className="fa fa-twitter lnk lnk-white" rel="bookmark"><span className="sr-only">Follow Kyle on Twitter</span></a></li>
+          <li><a href="https://github.com/kylecarter" className="fab fa-github-alt lnk lnk-white" rel="bookmark"><span className="sr-only">Follow me on Github</span></a></li>
+          <li><a href="https://twitter.com/kyleacarter" className="fab fa-twitter lnk lnk-white" rel="bookmark"><span className="sr-only">Follow Kyle on Twitter</span></a></li>
         </ul>
       </div>
     </div></section>

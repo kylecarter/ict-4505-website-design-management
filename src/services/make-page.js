@@ -13,9 +13,8 @@ export default ( title, description, content, props, classList )=> {
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <meta name="description" content="${ description }" />
       <title>${ title ? title + ' | Kyle A. Carter' : 'Kyle A. Carter' }</title>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet" />
-      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossOrigin="anonymous" />
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i|Roboto+Slab:700|Roboto+Condensed:700,700i" rel="stylesheet" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
       <link href="/css/stylesheet.css" rel="stylesheet" />
     </head>
     <body class="${ classList.join( ' ' ) }">

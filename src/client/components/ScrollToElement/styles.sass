@@ -1,0 +1,21 @@
+.scroll-to
+  width: 100%
+  display: none
+  text-decoration: none
+  text-transform: uppercase
+  font-size: emify( $font-size-large )
+  +position( absolute, null null 100px 0 )
+  font-family: $restaurant-headings-font-famiy
+
+  &:active, &:focus
+    outline: 0
+
+  &:before
+    display: block
+    margin-bottom: 3px
+
+  .marquee--jumbo &
+    color: $white
+
+  +breakpoint( nth( $scale, 5 ) + 1 )
+    display: block

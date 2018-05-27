@@ -1,0 +1,95 @@
+{
+    "menu": [
+        {
+            "id": 1,
+            "alt": "Guac me baby",
+            "desc": "Made to order guacmole topped off with pico and cilantro.",
+            "price": 5.00,
+            "title": "Chips & Gauc"
+        },
+        {
+            "id": 2,
+            "alt": "Nothing like your childhood mudpies",
+            "desc": "Black beans, queso, guacmole, signature sauces, cilantro-lime crema and chips",
+            "price": 8.00,
+            "title": "Vegan Mudd Dip"
+        },
+        {
+            "id": 3,
+            "alt": "Hella good",
+            "desc": "Vegan chedder and provolone, spanich, cilantro, vegan chorizo, cilantro-lime crema topped off with cream, roasted chipolte & fresh avocodo.",
+            "price": 8.00,
+            "title": "Hella Vegan Quesadilla",
+            "upgrade": {
+                "desc": "Upgrade: add vegan chicken, vegan beef or mushrooms",
+                "cost": 1.00
+            }
+        },
+        {
+            "id": 4,
+            "alt": "Just like grandma used to make",
+            "img": "img-20180405-131237.jpg",
+            "desc": "Tortilla chips, bell peppers, tofu scramble, cheddar, alfalfa sprouts, and all (3) of our signature sauces",
+            "price": 4.00,
+            "title": "Rockin Vegan Migas",
+            "upgrade": {
+                "desc": "Upgrade: add vegan chorizo, cilantro-lime crema & avocodo.",
+                "cost": 2.50
+            }
+        },
+        {
+            "id": 5,
+            "alt": "We are the three amigos",
+            "desc": "House made vegan country sausage, tofu scramble & vegan cheddar.",
+            "price": 4.00,
+            "title": "Three Amigos",
+            "upgrade": {
+                "desc": "Make it loco: add cilantro-lime crema, chipolte, bell peppers and avocode",
+                "cost": 2.00
+            }
+        },
+        {
+            "id": 6,
+            "alt": "Catus yum",
+            "img": "img-20180405-131906.jpg",
+            "desc": "Grilled nopales, pepper jack cheese, caramelized onions, black beans and cilantro.",
+            "price": 4.00,
+            "title": "El Nopal",
+            "upgrade": {
+                "desc": "Upgrade: add organic tofu scramble, avocado, ancho pepper sauce",
+                "cost": 2.00
+            }
+        },
+        {
+            "id": 7,
+            "alt": "Standing up to oppression never tasted so good",
+            "img": "img-20180406-133114.jpg",
+            "desc": "Representing the 99% withou our buffalo chicken taco, melted vegan pepper jack, sauteed onions, fresh cabbage, cilantro-lime crema, creamy roasted chipolte and avocado.",
+            "price": 5.00,
+            "title": "Birdie Sanders Buf' Chkn"
+        },
+        {
+            "id": 8,
+            "alt": "Al Pastor the right way",
+            "img": "img-20180406-133650.jpg",
+            "desc": "Marinated gluten-free protien, al pastor sauce with a hint of pineapple, chopped onions, cilantro and a lime wedge.",
+            "price": 5.00,
+            "title": "Tacos Al Pastor",
+            "upgrade": {
+                "desc": "Upgrade: add avocode",
+                "cost": 1
+            }
+        },
+        {
+            "id": 9,
+            "alt": "Shout, shout, shout... eatin' with the devil",
+            "desc": "Black beans, chorizo, caramelized onions, roastted green chiles, guacamole, drizzled with roasted chipolte and salsa verde.",
+            "price": 5.00,
+            "title": "Bean Diablo",
+            "upgrade": {
+                "desc": "Upgrade: add kale",
+                "cost": 0.50
+            }
+        }
+    ]
+}

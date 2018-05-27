@@ -2,4 +2,4 @@
 
 import React from 'react'
 
-export default ()=> <div id="conent" className="home-view">You are on the home page.</div>
+export default ()=> <div id="conent" className="home-view">404, page not found.</div>

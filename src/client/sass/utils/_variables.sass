@@ -10,8 +10,8 @@ $small-screen: nth( $scale, 4 ) + 1
 $medium-screen: nth( $scale, 5 ) + 1
 $large-screen: nth( $scale, 6 ) + 1
 
-$font-family-serif: "Roboto Slab", "Georgia", "Times", "Times New Roman", serif
-$font-family-sans-serif: 'Roboto', helvetica, sans-serif
+$font-family-serif: "Roboto Slab", $font-stack-georgia
+$font-family-sans-serif: 'Roboto', $font-stack-helvetica
 $font-family-base: $font-family-sans-serif
 $headings-font-family: $font-family-serif
 
@@ -42,7 +42,7 @@ $border-radius-large: $border-radius-base + 2
 $padding-base-vertical: ( $typography-base - 8 ) * 1px
 $padding-base-horizontal: ( ( $typography-base - 8 ) * 2 ) * 1px
 
-$input-height-base: 42px
+$input-height-base: 34px
 $input-border-radius: $border-radius-base
 
 $btn-font-weight: $font-weight-600

@@ -127,10 +127,12 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join( BASE_DIR, 'assets/static' )
 STATICFILES_DIRS = [
     os.path.join( BASE_DIR, 'projects/static' ),
+    os.path.join( BASE_DIR, 'restaurant/static' ),
 ]
 
 # Additional Installed Apps
 INSTALLED_APPS = [
+    'restaurant.apps.RestaurantConfig',
     'projects.apps.ProjectsConfig',
     'api.apps.ApiConfig',
 ] + INSTALLED_APPS

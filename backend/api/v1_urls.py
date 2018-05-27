@@ -18,10 +18,13 @@ from django.urls import path
 
 # Custom
 from projects.views import Collection, Assignment
+from restaurant.views import Navigation, Page
 from . import views
 
 urlpatterns = [
     path( 'projects/', Collection.as_view() ),
     path( 'verify/', views.verify, name='verify' ),
     path( 'project/<int:project_id>/', Assignment.as_view() ),
+    path( 'restaurant/pages/', Navigation.as_view() ),
+    path( 'restaurant/page/<slug:page_slug>/', Page.as_view() ),
 ]

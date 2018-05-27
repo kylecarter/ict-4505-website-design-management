@@ -2,12 +2,9 @@
 @import 'bourbon/core/bourbon'
 @import 'susy/sass/susy'
 
-// Fixes - Bitters wants an older version of Bourbon. Fixes a changed variable name.
-$helvetica: $font-stack-helvetica
-
 // More Node Modules
 @import 'css-reset-and-normalize-sass/scss/reset-and-normalize'
-@import 'bourbon-bitters/app/assets/stylesheets/bitters'
+@import 'Bitters/core/base'
 @import 'breakpoint-sass/stylesheets/breakpoint'
 @import './utils/index.sass'
 
@@ -25,3 +22,15 @@ $helvetica: $font-stack-helvetica
 @import '../components/Navigation/styles.sass'
 @import '../components/Sidebar/styles.sass'
 @import '../components/Footer/styles.sass'
+
+// Final Project > Views
+@import '../views/Restaurant/styles.sass'
+@import '../views/Restaurant/Styleguide/styles.sass'
+@import '../views/Restaurant/Page/styles.sass'
+@import '../views/Restaurant/Home/styles.sass'
+@import '../views/Restaurant/Menu/styles.sass'
+
+// Final Project > Components
+@import '../components/Restaurant/Navigation/styles.sass'
+@import '../components/Restaurant/Footer/styles.sass'
+@import '../components/ScrollToElement/styles.sass'

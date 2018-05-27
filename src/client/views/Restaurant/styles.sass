@@ -1,0 +1,76 @@
+$restaurant-primary: #5a76c0
+$restaurant-text-color: #26252b
+$restaurant-input-border-focus: $restaurant-primary
+$restaurant-headings-font-famiy: 'Roboto Condensed', $font-stack-helvetica
+
+.restaurant
+  color: $restaurant-text-color
+
+  .react-app > #footer
+    display: none
+
+  .btn
+    text-transform: uppercase
+    font-family: $restaurant-headings-font-famiy
+
+    &.fas
+      font: font-awesome()
+
+  .btn-default
+    color: $text-color
+    background-color: $white
+    border-color: $text-color
+
+    &:hover, &:focus, &:active
+      color: $white
+      border-color: $restaurant-primary
+      background-color: $restaurant-primary
+
+  .btn-primary
+    color: $white
+    border-color: $restaurant-primary
+    background-color: $restaurant-primary
+
+    &:hover, &:focus, &:active
+      color: $text-color
+      background-color: $white
+      border-color: $text-color
+
+  @for $x from 1 through 6
+    h#{ $x }, .h#{ $x }
+      font-family: $restaurant-headings-font-famiy
+      font-weight: 700
+
+  input[type="checkbox"]
+
+    &:checked + label::before
+      background-color: $restaurant-primary
+      border-color: $restaurant-primary
+
+  input[type="radio"]
+
+    &:checked + label::before
+      border-color: $restaurant-primary
+      color: $restaurant-primary
+
+  textarea
+
+    &:active, &:focus
+      border-color: $restaurant-input-border-focus
+      box-shadow: inset 0 1px 3px rgba( $black, 0.06 ), 0 0 5px rgba( $restaurant-input-border-focus, 0.7 )
+
+  @each $field in $text-fields
+
+    input[type="#{$field}"]
+
+      &:active, &:focus
+        border-color: $restaurant-input-border-focus
+        box-shadow: inset 0 1px 3px rgba( $black, 0.06 ), 0 0 5px rgba( $restaurant-input-border-focus, 0.7 )
+
+  select
+
+    &:active, &:focus
+
+      + .faux-select
+        border-color: $restaurant-input-border-focus
+        box-shadow: inset 0 1px 3px rgba( $black, 0.06 ), 0 0 5px rgba( $restaurant-input-border-focus, 0.7 )

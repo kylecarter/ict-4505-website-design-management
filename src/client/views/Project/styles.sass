@@ -1,5 +1,12 @@
 .project-view
   +clearfix
+  width: 100%
+
+  +breakpoint( nth( $scale, 5 ) + 1 )
+    display: flex
+    min-height: 75vh
+    align-items: stretch
+    justify-content: flex-start
 
   .content
     padding: 16px
@@ -21,6 +28,9 @@
 
     .two-column
       display: flex
+
+      .content
+        flex: 1
 
     .full-width &
 

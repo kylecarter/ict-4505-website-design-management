@@ -3,6 +3,12 @@
   -webkit-appearance: none
   border: solid thin $border-color
 
+  &:hover, &:focus, &:active
+    outline: 0
+
+  &.fas
+    font: font-awesome()
+
   &-default
     color: $btn-default-color
     background-color: $btn-default-bg
@@ -22,3 +28,13 @@
       color: $btn-primary-hover-color
       background-color: $btn-primary-hover-bg
       border-color: $btn-primary-border-hover-color
+  
+  &-plain
+    color: $text-color
+    border-color: transparent
+    background-color: transparent
+
+    &:hover, &:focus, &:active
+      color: $text-color
+      border-color: transparent
+      background-color: transparent

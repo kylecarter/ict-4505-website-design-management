@@ -46,6 +46,14 @@ h5, .h5
 h6, .h6
   font-size: emify( 13px )
 
+.wrapper, .container
+  +container
+
+address
+
+  span, time, a,
+    display: block
+
 .p
   font-family: $font-family-base
   font-weight: 400
@@ -62,6 +70,9 @@ li
   margin-bottom: 6px
 
 .text
+
+  &-danger
+    color: $danger
 
   &-center
     text-align: center

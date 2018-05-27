@@ -1,0 +1,31 @@
+%textfields
+
+  &:focus, &:active
+    border-color: $border-color-focus
+    box-shadow: inset 0 1px 3px rgba( $black, 0.06 ), 0 0 5px rgba( $border-color-focus, 0.7 )
+
+
+$text-fields:  text tel number url week time search password month email datetime-local date color
+
+.form-textfield
+  +position( relative, null null null null )
+
+@each $field in $text-fields
+
+  input[type="#{$field}"]
+    @extend %textfields
+
+    + label
+      +position( absolute, 0 null null 0.5em )
+      transition: top 150ms ease
+      margin: 0
+
+    &:active, &:focus
+
+      + label
+        top: $input-height-base * -1
+        left: 0
+
+
+textarea
+  @extend %textfields

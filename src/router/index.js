@@ -43,6 +43,41 @@ export default ( req, res )=> {
       classList = [ 'model-project' ];
       api = DJANGO + '/api/v1/project/' + MATCH.params.id;
       break;
+    case MATCH && MATCH.url && /restaurant(\/\w+)*/.test( MATCH.url ):
+      api = DJANGO + '/api/v1/restaurant/page/' + MATCH.params.page;
+      switch ( MATCH.params.page ) {
+        case 'about':
+          title = 'About | ';
+          break;
+        case 'contact':
+          title = 'Contact | ';
+          break;
+        case 'catering':
+          title = 'Catering | ';
+          break;
+        case 'contact':
+          title = 'Contact | ';
+          break;
+        case 'menu':
+          title = 'Menu | ';
+          break;
+        case 'locations':
+          title = 'Locations | ';
+          break;
+        case 'specials':
+          title = 'Specials | ';
+          break;
+        case 'styleguide':
+          title = 'Styleguide | ';
+          api = DJANGO + '/api/v1/restaurant/pages';
+          break;
+        default:
+          title = '';
+          break;
+      }
+      title += 'the Veagan Nom';
+      classList = [ 'restaurant', 'restaurant-' + ( MATCH.params.page ? MATCH.params.page : 'front' ) ];
+      break;
     default:
       classList = [ 'four-oh-four' ];
       title = "Page Not Found";

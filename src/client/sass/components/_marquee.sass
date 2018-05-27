@@ -1,0 +1,51 @@
+%marquee
+  color: $white
+  position: relative
+  text-shadow: 0 4px 4px rgba( $text-color, 0.59 )
+  background:
+    color: $text-color
+    repeat: no-repeat
+    position: center
+    size: cover
+
+  h1
+    color: $white
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+      font-size: emify( 50px )
+
+  .tag-line
+    font-size: emify( 20px )
+
+.marquee
+
+  &--standard, &--jumbo
+    @extend %marquee
+
+  &--standard
+    text-align: left
+    padding: 0 16px
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+      padding: 0
+      background-image: url( '/static/restaurant-imgs/marquee-bg-normal.jpg' )
+
+    .wrapper
+      padding: 6% 0
+
+  &--jumbo
+    padding: 0 16px
+    text-align: center
+    background-image: url( '/static/restaurant-imgs/marquee-bg-jumbo.jpg' )
+
+    +breakpoint( nth( $scale, 5 ) + 1 )
+      padding: 0
+
+    .tag-line
+
+      +breakpoint( nth( $scale, 5 ) + 1 )
+        font-size: emify( 30px )
+
+    .wrapper
+      padding: 20% 0
+      max-height: 100vh
